@@ -2,10 +2,9 @@
 
 copyright:
   years: 2023
-lastupdated: "2023-11-28"
+lastupdated: "2023-12-26"
 
-subcollection: <repo-name>
-
+subcollection: pattern-sap-on-vpc
 keywords:
 
 ---
@@ -15,28 +14,32 @@ keywords:
 # Overview
 {: #overview}
 
-<!-- Note to author>    THIS SHOULD BE ABOUT 10 – 15 LINES AND FOLLOW….
-The objective of this pattern is to provide a solution design for……. -->
+The objective of this document is to provide an IBM Solution Design for the deployment of SAP on IBM Cloud Virtual Private Cloud (VPC) to:
 
-This pattern is intended to:
-* Accelerate and simplify solution design by providing a standard IBM Cloud deployment architecture reference following the IBM Architecture Framework.
-* Provide a prescriptive, end-2-end enterprise-class solution design, with diagrams, component architecture decisions along with rationale for cloud component selection to meet enterprise requirements.
-* Ensure requirements can be met from a performance, system availability and security perspective.
+-   Accelerate and simplify solution design by providing a standard IBM Cloud deployment architecture reference solution for SAP on IBM PowerVS enterprise-class deployments following the [IBM Architecture Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro).
 
-<!-- Add any clarifications of what is in scope/out of scope, make sure you address these points in the doc) -->
+-   Provide a prescriptive, end-2-end enterprise-class solution design, with diagrams, component architecture decisions along with rationale for cloud component selection for a secure, resilient SAP on IBM Cloud VPC.
 
-<!-- Note to author> THIS SHOULD IDEALLY TAKE UP THE REST OF THE PAGE AND FOLLOW
- ABC pattern allows customers to……(what is the compelling reason to use this pattern?)
-The IBM …….consists of …(compelling reason to use IBM Cloud, i.e. specific IBM cloud offering)
-Use the following text for reference to Architecture Framework aspects and domains. -->
+-   Ensure requirements can be met from performance, system availability and security perspectives.
 
-Following the Architecture Framework, the `<Pattern Name>` covers design considerations and architecture decisions for the following aspects and domains:
-<!-- Note to author> <List the aspects and domains covered in this pattern; Here is an example:-->
-- Compute: Virtual Servers
-- Storage: Primary Storage, Backup Storage
-- Networking: Enterprise Connectivity, Segmentation and Isolation, Cloud Native Connectivity, Load Balancing, DNS
-- Security: Data Security, Identity and Access Management, Application Security, Infrastructure and Endpoint Security
-- Resiliency: High Availability, Backup and Restore
-- Service Management: Monitoring, Logging, Auditing, Alerting
+This guide does not cover SAP configuration and SAP component deployment scenarios, it is limited to IBM cloud infrastructure options to support SAP workloads.
 
-The Architecture Framework provides a consistent approach to design cloud solutions by addressing requirements across a set of "aspects" and "domains", which are technology-agnostic architectural areas that need to be considered for any enterprise solution. For more details, see [Introduction to the Architecture Framework](/docs/architecture-framework).
+Enterprise-class, mission critical workloads need to be secure, resilient and provide disaster recovery (DR) capabilities and high availability (HA). This pattern can be used as a guide to meet typical customer requirements and provide a base reference solution for a secure and resilient SAP NetWeaver/HANA or SAP NetWeaver/AnyDB deployment to IBM VPC.
+
+It supports the deployment of SAP Business Applications Running on SAP NetWeaver, SAP HANA or SAP AnyDB and other SAP products using other technologies (SAP Content Server, or newer applications such as SAP Data Intelligence).
+
+IBM Cloud SAP-Certified Infrastructure provides the flexibility to run SAP workloads in the IBM Cloud and the ability to quickly address issues such as:
+
+-   Moving SAP workloads to the cloud
+
+-   Rapidly expanding or contracting capacity
+
+-   Supplementing an existing private cloud architecture
+
+Enterprise-class, mission critical workloads need to be resilient and provide disaster recovery (DR) capabilities and high availability (HA). This pattern illustrates a Single-Zone, Multi-Region design deployed to IBM Virtual Private Cloud (VPC), which can provide both DR and HA to provide 99.95 availability for an SAP NetWeaver/HANA or SAP NetWeaver/AnyDB solution to meet typical customer requirements.
+
+The following documentation provides architecture, design considerations and guidance for deploying the infrastructure to support SAP workloads, including:
+
+-   SAP Business Applications such as SAP S/4HANA or SAP BW/4HANA
+
+-   SAP Technical Applications such SAP HANA database server and SAP NetWeaver application server

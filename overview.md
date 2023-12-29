@@ -16,7 +16,7 @@ keywords:
 
 The objective of this document is to provide an IBM Solution Design for the deployment of SAP on IBM Cloud Virtual Private Cloud (VPC) to:
 
--   Accelerate and simplify solution design by providing a standard IBM Cloud deployment architecture reference solution for SAP on IBM PowerVS enterprise-class deployments following the [IBM Architecture Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro).
+-   Accelerate and simplify solution design by providing a standard IBM Cloud VPC deployment architecture reference solution for SAP enterprise-class deployments following the [IBM Architecture Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro).
 
 -   Provide a prescriptive, end-2-end enterprise-class solution design, with diagrams, component architecture decisions along with rationale for cloud component selection for a secure, resilient SAP on IBM Cloud VPC.
 
@@ -24,7 +24,7 @@ The objective of this document is to provide an IBM Solution Design for the depl
 
 This guide does not cover SAP configuration and SAP component deployment scenarios, it is limited to IBM cloud infrastructure options to support SAP workloads.
 
-Enterprise-class, mission critical workloads need to be secure, resilient and provide disaster recovery (DR) capabilities and high availability (HA). This pattern can be used as a guide to meet typical customer requirements and provide a base reference solution for a secure and resilient SAP NetWeaver/HANA or SAP NetWeaver/AnyDB deployment to IBM VPC.
+Enterprise-class, mission critical workloads need to be secure, resilient and provide disaster recovery (DR) capabilities and high availability (HA). This pattern can be used as a guide to meet typical customer requirements and provide a base reference solution for a secure and resilient SAP NetWeaver/HANA or SAP NetWeaver/AnyDB deployment to IBM Cloud VPC.
 
 It supports the deployment of SAP Business Applications Running on SAP NetWeaver, SAP HANA or SAP AnyDB and other SAP products using other technologies (SAP Content Server, or newer applications such as SAP Data Intelligence).
 

@@ -15,8 +15,8 @@ keywords:
 # Architecture decisions for storage
 {: #storage-decisions}
 
-|**Architecture decision**|**Requirement**| **Decision**| **Rationale**|
-| | | | |
+| **Architecture decision**                | **Requirement**                                                                 | **Decision**                 | **Rationale**                                                                    |
+|-|-|-|-|
 | **Workloads -- Bare Metal** |                                                    |                                                                                                                                 |                                                                                                                                                 |
 | Primary Storage             | local file storage on BM                           | Local NVMe storage                                                                                                              | All SAP Certified BM servers have local NVMe storage. There are no options for block or file storage.                                           |
 | Backup Storage              | Backup storage for BM servers                      | Block storage \n Cloud Object Storage                                                                                                                   | -   Cloud Object Storage for lower costs \n -   Combine Block and COS for long-term needs \n-   Cloud Object Storage is used for cost optimized options for Backups                                                                                                      |

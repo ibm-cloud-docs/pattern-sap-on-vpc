@@ -29,6 +29,4 @@ File shares can be mounted only on supported on Linux operating systems that sup
 
 For specific storage layouts, see the compute considerations section and profiles links above.
 
-Other Storage Considerations
-
-<https://cloud.ibm.com/docs/sap?topic=sap-storage-design-considerations>
+[Other Storage Considerations](https://cloud.ibm.com/docs/sap?topic=sap-storage-design-considerations)

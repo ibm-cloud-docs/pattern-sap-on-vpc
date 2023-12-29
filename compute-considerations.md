@@ -21,21 +21,13 @@ SAP only certifies specific VSI and Bare Metal server profiles in IBM Cloud, the
 
 There are a variety of SAP certified VSI and Bare Metal server profiles for deployment of SAP NetWeaver and HANA on IBM Cloud VPC which can be found on IBM Cloud Docs at the following links.
 
-NetWeaver VSI profiles:
+[NetWeaver VSI profiles](https://cloud.ibm.com/docs/sap?topic=sap-nw-iaas-offerings-profiles-intel-vs-vpc)
 
-> <https://cloud.ibm.com/docs/sap?topic=sap-nw-iaas-offerings-profiles-intel-vs-vpc>
+[NetWeaver Bare Metal profiles](https://cloud.ibm.com/docs/sap?topic=sap-nw-iaas-offerings-profiles-intel-bm-vpc)
 
-NetWeaver Bare Metal profiles:
+[HANA VSI profiles](https://cloud.ibm.com/docs/sap?topic=sap-hana-iaas-offerings-profiles-intel-vs-vpc)
 
-> <https://cloud.ibm.com/docs/sap?topic=sap-nw-iaas-offerings-profiles-intel-bm-vpc>
-
-HANA VSI profiles:
-
-> <https://cloud.ibm.com/docs/sap?topic=sap-hana-iaas-offerings-profiles-intel-vs-vpc>
-
-HANA Bare Metal profiles:
-
-<https://cloud.ibm.com/docs/sap?topic=sap-hana-iaas-offerings-profiles-intel-bm-vpc>
+[HANA Bare Metal profiles](https://cloud.ibm.com/docs/sap?topic=sap-hana-iaas-offerings-profiles-intel-bm-vpc)
 
 For sizing information see [Sizing process for SAP Systems](https://cloud.ibm.com/docs/sap?topic=sap-sizing&interface=ui).
 

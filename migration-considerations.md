@@ -17,7 +17,7 @@ keywords:
 
 There are several migration scenarios, the most straight-forward being a direct "lift-and-shift" (homogeneous) where the Infrastructure and SAP versions remain the same, for example on-prem SAP NetWeaver ABAP 7.0 running on VMWare to the same environment on cloud. Migration from on-prem to another infrastructure platform or SAP version (heterogeneous) can become more complex, especially when combined with a DB conversion or application server upgrade.
 
-# For a list of migration options and tools, see [Moving SAP Workloads to IBM Cloud](https://cloud.ibm.com/docs/sap?topic=sap-faq-moving-sap-workloads#faq-moving-sap-workloads-overview).
+For a list of migration options and tools, see [Moving SAP Workloads to IBM Cloud](https://cloud.ibm.com/docs/sap?topic=sap-faq-moving-sap-workloads#faq-moving-sap-workloads-overview).
 
 There are two types of SAP migration categories:
 

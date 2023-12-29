@@ -32,7 +32,8 @@ content-type: reference-architecture
 ## Architecture diagram
 {: #architecture-diagram}
 
-![A diagram of a software system Description automatically generated](image1.png)
+![A diagram of a computer network Description automatically
+generated](./image1.png)
 
 Figure 1
 
@@ -54,7 +55,8 @@ The components deployed to the Edge VPC provide security functions and resource 
 
 5.  Global Transit Gateway connecting the Workload VPC across regions to facilitate replication for DR purposes.
 
-![A diagram of a company Description automatically generated](image2.png)
+![A diagram of a computer network Description automatically
+generated](./image2.png)
 
 Figure 2
 

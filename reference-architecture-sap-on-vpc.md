@@ -102,7 +102,8 @@ The Architecture Framework, described in [Introduction to the Architecture Frame
 
 The Figure 3 shows the domains that are covered in this solution.
 
-![A screenshot of a computer description automatically generated](./image3.png)
+![A diagram of a computer network Description automatically
+generated](./image3.png)
 
 Figure 3
 
@@ -154,8 +155,8 @@ The following represents a baseline set of requirements which we believe are app
 |                                    | [DNS Services](https://cloud.ibm.com/docs/dns-svcs?topic=dns-svcs-about-dns-services)                                                                                                         |                                                                                          |
 |                                    | [VPCs and subnets](https://cloud.ibm.com/docs/vpc?topic=vpc-about-subnets-vpc&interface=ui)                                                                                                                 | Network Segmentation/Isolation                                                           |
 |                                    | [Transit Gateway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-about)                                                                                                                   | Connect across multiple VPCs                                                             |
-|                                    | [IBM Cloud Application Load Balancer](https://cloud.ibm.com/docs/vpc?topic=vpc-load-balancers-about) (ALB) \n SAP Web Dispatcher                                                                                                 | Load balancing workloads across multiple workload instances over the private network     |Security|
-|[Block Storage encryption](https://cloud.ibm.com/docs/vpc?topic=vpc-mng-data&interface=ui) with provider keys                                                                                 | Block Storage Encryption at rest                                                         |
+|                                    | [IBM Cloud Application Load Balancer](https://cloud.ibm.com/docs/vpc?topic=vpc-load-balancers-about) (ALB) \n SAP Web Dispatcher                                                                                                 | Load balancing workloads across multiple workload instances over the private network     |
+|Security   |[Block Storage encryption](https://cloud.ibm.com/docs/vpc?topic=vpc-mng-data&interface=ui) with provider keys                                                                                 | Block Storage Encryption at rest                                                         |
 |                                    | Cloud Object Storage Encryption                                                                                                                                                                             | Cloud Object Storage Encryption at rest                                                  |
 |                                    | HANA Data Volume Encryption (DVE)                                                                                                                                                                           | HANA Database Encryption at rest                                                         |
 |                                    | [IAM](https://cloud.ibm.com/docs/account?topic=account-cloudaccess)                                                                                                                           | IBM Cloud Identity & Access Management                                                   |

@@ -16,7 +16,7 @@ version: 1.0
 
 deployment-url:
 
-docs: https://cloud.ibm.com/docs/pattern-sap-on-powervs
+docs: /docs/pattern-sap-on-powervs
 
 content-type: reference-architecture
 
@@ -39,7 +39,7 @@ The Secondary Region supports non-Production and Disaster Recovery workloads sho
 The components deployed to the Edge VPC provide security functions and resource isolation to the IBM Cloud workloads.
 
 ![A diagram of a computer network Description automatically
-generated](./image1.png)
+generated](./image1.svg)
 
 Figure 1
 
@@ -57,7 +57,7 @@ Figure 1
 Figure 2 illustrates a more detailed network and component architecture for a single-zone, multi-region deployment to facilitate disaster recovery.
 
 ![A diagram of a computer network Description automatically
-generated](./image2.png)
+generated](./image2.svg)
 
 Figure 2
 
@@ -71,7 +71,7 @@ Figure 2
 
 5.  Public connectivity routes through Cloud Internet services which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
 
-6.  The VPC APP subnet, contains SAP components hosted on redundant SAP certified VSIs or Bare metal using either local storage (BM) or shared block storage in an [SAP Scale-out](https://cloud.ibm.com/docs/sap?topic=sap-refarch-hana-scaleout#network-layout-for-scale-out-configurations-2) environment.
+6.  The VPC APP subnet, contains SAP components hosted on redundant SAP certified VSIs or Bare metal using either local storage (BM) or shared block storage in an [SAP Scale-out](/docs/sap?topic=sap-refarch-hana-scaleout#network-layout-for-scale-out-configurations-2) environment.
 
 7.  The VPC DB subnet hosts the SAP database, in this case HANA hosted on SAP certified VSIs or Bare metal using either local storage (BM) or block storage.
 
@@ -84,7 +84,7 @@ Figure 2
 ## Design scope
 {: #design-scope}
 
-Following the [Architecture Framework](https://test.cloud.ibm.com/docs-draft/architecture-framework?topic=architecture-framework-taxonomy), SAP on VPC covers design considerations and architecture decisions for the following aspects and domains:
+Following the [Architecture Framework](/docs/architecture-framework?topic=architecture-framework-taxonomy), SAP on VPC covers design considerations and architecture decisions for the following aspects and domains:
 
 -   **Compute:** Bare Metal and Virtual infrastructure
 
@@ -98,12 +98,12 @@ Following the [Architecture Framework](https://test.cloud.ibm.com/docs-draft/arc
 
 -   **Service Management:** Monitoring, Logging, Alerting, Management/Orchestration
 
-The Architecture Framework, described in [Introduction to the Architecture Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas that need to be considered for any enterprise solution. It can be used as a guide to make the necessary design and component choices to ensure you have considered applicable requirements for each aspect and domain. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
+The Architecture Framework, described in [Introduction to the Architecture Framework](/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas that need to be considered for any enterprise solution. It can be used as a guide to make the necessary design and component choices to ensure you have considered applicable requirements for each aspect and domain. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
 The Figure 3 shows the domains that are covered in this solution.
 
 ![A diagram of a computer network Description automatically
-generated](./image3.png)
+generated](./image3.svg)
 
 Figure 3
 
@@ -112,7 +112,7 @@ Figure 3
 
 The following represents a baseline set of requirements which we believe are applicable to most clients and critical to successful SAP deployment.
 
-| **Aspect**         | **Requirement**                                                                                                                                                                                                                                                                                                                       |
+|Aspect         |Requirement                                                                                                                                                                                                                                                                                                                       |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Network            | Enterprise connectivity to customer data center(s) to provide access to applications from on-prem                                                                                                                                                                                                                                    |
 |                    | Map and convert existing customer SAP Network functionality into IBM Cloud and VPC networking services                                                                                                                                                                                                                            |
@@ -142,33 +142,33 @@ The following represents a baseline set of requirements which we believe are app
 ## Components
 {: #components}
 
-| **Aspect**| **Component**| **How the component is used**|
+|Aspect**|Component|How the component is used|
 |-------------------|--------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
-| Compute                            | [VPC VSIs](https://cloud.ibm.com/vpc-ext/provision/vs)                                                                                                                                        | NetWeaver and HANA DB                                                                    |
-| Storage                            |[VPC Block Storage](https://cloud.ibm.com/docs/openshift?topic=openshift-vpc-block)                                                                                                           | NetWeaver and HANA DB servers primary storage. Backup storage                            |
-|                                    | [Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage)                                                                 | Backup and archive, application logs, operational logs and audit logs                    |
-| Networking                         | [VPC Virtual Private Network (VPN)](https://cloud.ibm.com/docs/iaas-vpn?topic=iaas-vpn-getting-started)                                                                                                     | Remote access to manage resources in private network                                     |
-|                                    | [Virtual Private Gateway & Virtual Private Endpoint (VPE)](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vpe)                                                                                | For private network access to Cloud Services, e.g. Key Protect, COS, etc.                |
-|                                    | [VPC Load Balancers](https://cloud.ibm.com/docs/vpc?topic=vpc-load-balancers)                                                                                                                 | Application Load Balancing for web servers, app servers, and database servers            |
+| Compute                            | [VPC VSIs](/docs/vpc?topic=vpc-creating-virtual-servers&interface=ui)                                                                                                                                        | NetWeaver and HANA DB                                                                    |
+| Storage                            |[VPC Block Storage](/docs/vpc?topic=vpc-creating-block-storage&interface=ui)                                                                                                           | NetWeaver and HANA DB servers primary storage. Backup storage                            |
+|                                    | [Cloud Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage)                                                                 | Backup and archive, application logs, operational logs and audit logs                    |
+| Networking                         | [VPC Virtual Private Network (VPN)](/docs/iaas-vpn?topic=iaas-vpn-getting-started)                                                                                                     | Remote access to manage resources in private network                                     |
+|                                    | [Virtual Private Gateway & Virtual Private Endpoint (VPE)](/docs/vpc?topic=vpc-about-vpe)                                                                                | For private network access to Cloud Services, e.g. Key Protect, COS, etc.                |
+|                                    | [VPC Load Balancers](/docs/vpc?topic=vpc-load-balancers)                                                                                                                 | Application Load Balancing for web servers, app servers, and database servers            |
 |                                    | Public Gateway                                                                                                                                                                                              | For web server access to the internet                                                    |
-|                                    | [Cloud Internet Services (CIS)](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)                                                                                                                   | Public Load balancing and DDoS of web servers traffic across zones in the region         |
-|                                    | [DNS Services](https://cloud.ibm.com/docs/dns-svcs?topic=dns-svcs-about-dns-services)                                                                                                         |                                                                                          |
-|                                    | [VPCs and subnets](https://cloud.ibm.com/docs/vpc?topic=vpc-about-subnets-vpc&interface=ui)                                                                                                                 | Network Segmentation/Isolation                                                           |
-|                                    | [Transit Gateway](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-about)                                                                                                                   | Connect across multiple VPCs                                                             |
-|                                    | [IBM Cloud Application Load Balancer](https://cloud.ibm.com/docs/vpc?topic=vpc-load-balancers-about) (ALB) \n SAP Web Dispatcher                                                                                                 | Load balancing workloads across multiple workload instances over the private network     |
-|Security   |[Block Storage encryption](https://cloud.ibm.com/docs/vpc?topic=vpc-mng-data&interface=ui) with provider keys                                                                                 | Block Storage Encryption at rest                                                         |
+|                                    | [Cloud Internet Services (CIS)](/docs/cis?topic=cis-getting-started)                                                                                                                   | Public Load balancing and DDoS of web servers traffic across zones in the region         |
+|                                    | [DNS Services](/docs/dns-svcs?topic=dns-svcs-about-dns-services)                                                                                                         |                                                                                          |
+|                                    | [VPCs and subnets](/docs/vpc?topic=vpc-about-subnets-vpc&interface=ui)                                                                                                                 | Network Segmentation/Isolation                                                           |
+|                                    | [Transit Gateway](/docs/transit-gateway?topic=transit-gateway-about)                                                                                                                   | Connect across multiple VPCs                                                             |
+|                                    | [IBM Cloud Application Load Balancer](/docs/vpc?topic=vpc-load-balancers-about) (ALB) \n SAP Web Dispatcher                                                                                                 | Load balancing workloads across multiple workload instances over the private network     |
+|Security   |[Block Storage encryption](/docs/vpc?topic=vpc-mng-data&interface=ui) with provider keys                                                                                 | Block Storage Encryption at rest                                                         |
 |                                    | Cloud Object Storage Encryption                                                                                                                                                                             | Cloud Object Storage Encryption at rest                                                  |
 |                                    | HANA Data Volume Encryption (DVE)                                                                                                                                                                           | HANA Database Encryption at rest                                                         |
-|                                    | [IAM](https://cloud.ibm.com/docs/account?topic=account-cloudaccess)                                                                                                                           | IBM Cloud Identity & Access Management                                                   |
+|                                    | [IAM](/docs/account?topic=account-cloudaccess)                                                                                                                           | IBM Cloud Identity & Access Management                                                   |
 |                                    | Privileged Identity and Access Management                                                                                                                                                                   | BYO Bastion host (or Privileged Access Gateway) with PAM SW deployed in Edge VPC         |
-|                                    | [BYO Bastion Host on VPC VSI with PAM SW](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport) | Remote access with Privileged Access Management                                          |
-|                                    | [Virtual Private Clouds (VPCs), Subnets, Security Groups, ACLs](https://cloud.ibm.com/docs/vpc?topic=vpc-getting-started)                                                                     | Core Network Protection                                                                  |
-|                                    | [Cloud Internet Services (CIS)](https://cloud.ibm.com/docs/cis?topic=cis-getting-started)                                                                                                                   | DDoS protection and Web App Firewall                                                     |
-|                                    | One of the following: \n - [Fortigate](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global) \n - [Juniper vSRX](https://cloud.ibm.com/catalog/content/juniper-vsrx-catalog-deploy-1.4-dc1e707c-33dd-4321-b2a5-c22dbf0dd0ee-global) \n -  [Palo Alto](https://cloud.ibm.com/catalog/content/ibmcloud-vmseries-1.9-6470816d-562d-4627-86a5-fe3ad4e94b30-global)                                                    | -   IPS/IDS protection at all ingress/egress \n-   Unified Threat Management (UTM) Firewall                                            |
+|                                    | [BYO Bastion Host on VPC VSI with PAM SW](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport) | Remote access with Privileged Access Management                                          |
+|                                    | [Virtual Private Clouds (VPCs), Subnets, Security Groups, ACLs](/docs/vpc?topic=vpc-getting-started)                                                                     | Core Network Protection                                                                  |
+|                                    | [Cloud Internet Services (CIS)](/docs/cis?topic=cis-getting-started)                                                                                                                   | DDoS protection and Web App Firewall                                                     |
+|                                    | One of the following: \n - [Fortigate](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global) \n - [Palo Alto](https://cloud.ibm.com/catalog/content/ibmcloud-vmseries-1.9-6470816d-562d-4627-86a5-fe3ad4e94b30-global)                                                    | -   IPS/IDS protection at all ingress/egress \n-   Unified Threat Management (UTM) Firewall                                            |
 | Resiliency                         | HANA System Replication (HSR)                                                                                                                                                                               | Provide 99.95% availability for HANA DB                                                  |
-|                                    | [Veeam](https://cloud.ibm.com/docs/vpc?topic=vpc-about-veeam)                                                                                                                                               | Controls both the backups and restores of all VSIs or BMs. Veeam Backup & Replication 12 |
-| Service Management (Observability) | [IBM Cloud Monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor)                                                                                                                | Apps and operational monitoring                                                          |
-|                                    | [IBM Log Analysis](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started)                                                                                                              | Apps and operational logs                                                                |
+|                                    | [Veeam](/docs/vpc?topic=vpc-about-veeam)                                                                                                                                               | Controls both the backups and restores of all VSIs or BMs. Veeam Backup & Replication 12 |
+| Service Management (Observability) | [IBM Cloud Monitoring](/docs/monitoring?topic=monitoring-about-monitor)                                                                                                                | Apps and operational monitoring                                                          |
+|                                    | [IBM Log Analysis](/docs/log-analysis?topic=log-analysis-getting-started)                                                                                                              | Apps and operational logs                                                                |
 {: caption="Table 2. Components" caption-side="bottom"}
 
 As mentioned earlier, the Architecture Framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. The following sections contain the considerations, and architecture decisions for the aspects and domains that are in play in this solution pattern.

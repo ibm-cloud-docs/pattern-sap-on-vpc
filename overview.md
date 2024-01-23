@@ -16,7 +16,7 @@ keywords:
 
 The objective of this document is to provide an IBM Solution Design for the deployment of SAP on IBM Cloud Virtual Private Cloud (VPC) to:
 
--   Accelerate and simplify solution design by providing a standard IBM Cloud VPC deployment architecture reference solution for SAP enterprise-class deployments following the [IBM Architecture Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro).
+-   Accelerate and simplify solution design by providing a standard IBM Cloud VPC deployment architecture reference solution for SAP enterprise-class deployments following the [IBM Architecture Framework](/docs/architecture-framework?topic=architecture-framework-intro).
 
 -   Provide a prescriptive, end-2-end enterprise-class solution design, with diagrams, component architecture decisions along with rationale for cloud component selection for a secure, resilient SAP on IBM Cloud VPC.
 

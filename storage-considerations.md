@@ -23,10 +23,10 @@ By default, IBM Cloud Bare Metal Servers come with high-performance and highly r
 
 Storage for VPC Bare Metal Servers is unmanaged. Client is responsible for backing up data.
 
-If more storage is required on Bare metal servers, for example, for backup purposes, NFS-based file shares can be created and mounted. Learn more details in the corresponding chapter [Creating file shares and mount targets](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-create). Encryption in transit is not supported between Block Storage for VPC and Bare Metal Servers for VPC.
+If more storage is required on Bare metal servers, for example, for backup purposes, NFS-based file shares can be created and mounted. Learn more details in the corresponding chapter [Creating file shares and mount targets](/docs/vpc?topic=vpc-file-storage-create). Encryption in transit is not supported between Block Storage for VPC and Bare Metal Servers for VPC.
 
 File shares can be mounted only on supported on Linux operating systems that support NFS file shares.
 
 For specific storage layouts, see the compute considerations section and profiles links above.
 
-[Other Storage Considerations](https://cloud.ibm.com/docs/sap?topic=sap-storage-design-considerations)
+[Other Storage Considerations](/docs/sap?topic=sap-storage-design-considerations)

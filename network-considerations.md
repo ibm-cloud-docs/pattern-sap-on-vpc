@@ -25,4 +25,4 @@ Enterprise connectivity is needed to connect the SAP environment to the client d
 
 A separate Management VPC (not illustrated) can be deployed into multiple regions, to host management infrastructure and services also connected to the Edge and workload VPCs through Transit Gateway.
 
-For a list of all Networking Considerations, see [Networking design considerations](https://cloud.ibm.com/docs/sap?topic=sap-networking-design-considerations).
+For a list of all Networking Considerations, see [Networking design considerations](/docs/sap?topic=sap-networking-design-considerations).

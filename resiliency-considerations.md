@@ -27,7 +27,7 @@ Both DR and HA can be enabled using several technologies and approaches which de
 
 The table below shows a comparison of the different deployment options.
 
-| Deployment    | Availability | Description   | Recommended use   |
+| Deployment|Availability|Description|Recommended use|
 |------------------|------------------|------------------|------------------|
 | Single Zone                 | 99.9%^1^        |Single instance (single point of failure) or multiple instances (protects from infrastructure failures) |Low to medium priority applications                                             |
 |                             |                 |Low/Medium cost                                                                                         |Non-production environment                                                      |

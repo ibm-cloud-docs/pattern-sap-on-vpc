@@ -23,7 +23,7 @@ There are a variety of SAP certified VSI and Bare Metal server profiles for depl
 
 [NetWeaver VSI profiles](/docs/sap?topic=sap-nw-iaas-offerings-profiles-intel-vs-vpc)
 
-[NetWeaver Bare Metal profiles](docs/sap?topic=sap-nw-iaas-offerings-profiles-intel-bm-vpc)
+[NetWeaver Bare Metal profiles](/docs/sap?topic=sap-nw-iaas-offerings-profiles-intel-bm-vpc)
 
 [HANA VSI profiles](/docs/sap?topic=sap-hana-iaas-offerings-profiles-intel-vs-vpc)
 
@@ -33,7 +33,7 @@ For sizing information see [Sizing process for SAP Systems](/docs/sap?topic=sap-
 
 Choose an SAP Bare Metal or VSI profile from the list of certified servers in the IBM Cloud Catalog along with the appropriate SAP image. Changes are not allowed to Bare Metal servers.
 
-HANA is an "in-memory" database so memory sizing must be taken into consideration. If a HANA database size exceeds 5.6 TB of memory, PowerVS (with a range of profiles up to 22.5 TB) is the recommended landing zone and is covered in [SAP on PowerVS](/docs/pattern-sap-on-powervs?topic=pattern-sap-powervs-overview).
+HANA is an "in-memory" database so memory sizing must be taken into consideration. If a HANA database size exceeds 5.6 TB of memory, PowerVS (with a range of profiles up to 22.5 TB) is the recommended landing zone and is covered in [SAP on PowerVS](/docs/pattern-sap-on-powervs?topic=pattern-sap-on-powervs-overview).
 
 For a distributed SAP installation, it is best to have all nodes in the same location (for example, the same Availability Zone or Datacenter). Deviation from this setup can cause latency and timeouts, which render your SAP system unresponsive. Due to this, SAP does not support the application layer and database to be deployed across different zones; the application and database layers must exist in the same availability zone. Therefore, if the required memory for HANA targets a PowerVS deployment, the application layer must also be on PowerVS, NOT VPC.
 

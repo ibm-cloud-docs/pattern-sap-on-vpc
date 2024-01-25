@@ -19,7 +19,7 @@ SAP solutions will want to ensure there is enough available storage to accommoda
 
 Bare Metal Storage Considerations
 
-By default, IBM Cloud Bare Metal Servers come with high-performance and highly reliable internal storage based on solid-state disks and high-performance RAID adapters. All SAP certified Bare Metal Server profiles for VPC provide one 0.96 TB SATA M.2 mirrored SSD as the boot disk. Additionally, All SAP certified Bare Metal servers for VPC have 8 - 16 NVMe (Non-Volatile Memory Express) U.2 solid-state drives (SSD) as secondary local storage -- depending on their size -- which need to be configured after server deployment. NVMe SSDs provides fast and affordable storage to support customer-managed RAID.
+By default, {{site.data.keyword.baremetal_long}} come with high-performance and highly reliable internal storage based on solid-state disks and high-performance RAID adapters. All SAP certified Bare Metal Server profiles for VPC provide one 0.96 TB SATA M.2 mirrored SSD as the boot disk. Additionally, All SAP certified Bare Metal servers for VPC have 8 - 16 NVMe (Non-Volatile Memory Express) U.2 solid-state drives (SSD) as secondary local storage -- depending on their size -- which need to be configured after server deployment. NVMe SSDs provides fast and affordable storage to support customer-managed RAID.
 
 Storage for VPC Bare Metal Servers is unmanaged. Client is responsible for backing up data.
 

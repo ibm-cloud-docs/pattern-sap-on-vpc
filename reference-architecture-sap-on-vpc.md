@@ -50,7 +50,7 @@ The diagram maps the flow of a computer network description that's automatically
 
 5.  Global Transit Gateway connecting the Workload VPC across regions to facilitate replication for DR purposes.
 
-![A diagram of a computer network description automatically generated](./SAP-HA-DR.svg){: caption="Figure 2" caption-side="bottom"}
+![A diagram of a computer network description automatically generated](./image2.svg){: caption="Figure 2" caption-side="bottom"}
 
 Figure 2 illustrates a more detailed network and component architecture for a single-zone, multi-region deployment to facilitate disaster recovery.
 

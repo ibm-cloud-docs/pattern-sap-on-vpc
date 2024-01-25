@@ -36,9 +36,6 @@ The SAP on VPC architecture provides a high-level summary of the pattern, an SAP
 
 The primary region supports production workloads on VPC running on either SAP Certified Bare Metal or VSIs. The secondary region supports nonproduction and disaster recovery workloads if the customer has DR requirements. The components deployed to the Edge VPC provide security functions and resource isolation to the {{site.data.keyword.Bluemix_notm}} workloads.
 
-![A diagram of a computer network description automatically
-generated](./image1.svg)
-
 ![A diagram of a computer network description automatically generated](./image1.svg){: caption="Figure 1. A diagram of a computer network description automatically
 generated" caption-side="bottom"}
 
@@ -54,10 +51,8 @@ The diagram maps the flow of a computer network description that's automatically
 
 5.  Global Transit Gateway connecting the Workload VPC across regions to facilitate replication for DR purposes.
 
-
 ![A diagram of a computer network description automatically generated](./image2.svg){: caption="Figure 2. A diagram of a computer network description automatically
 generated" caption-side="bottom"}
-
 
 Figure 2 illustrates a more detailed network and component architecture for a single-zone, multi-region deployment to facilitate disaster recovery.
 
@@ -104,7 +99,6 @@ The Figure 3 shows the domains that are covered in this solution.
 
 ![A diagram of a computer network description automatically generated](./image3.svg){: caption="Figure 3. A diagram of a computer network description automatically
 generated" caption-side="bottom"}
-
 
 ## Requirements
 {: #requirements}

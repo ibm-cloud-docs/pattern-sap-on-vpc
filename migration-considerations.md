@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-26"
+  years: 2023, 2024
+lastupdated: "2023-01-25"
 
 subcollection: pattern-sap-on-vpc
 
@@ -15,29 +15,32 @@ keywords:
 # Migration design
 {: #migration-design}
 
-There are several migration scenarios, the most straight-forward being a direct "lift-and-shift" (homogeneous) where the Infrastructure and SAP versions remain the same, for example on-prem SAP NetWeaver ABAP 7.0 running on VMWare to the same environment on cloud. Migration from on-prem to another infrastructure platform or SAP version (heterogeneous) can become more complex, especially when combined with a DB conversion or application server upgrade.
+There are several migration scenarios, the most straight-forward being a direct "lift-and-shift" (homogeneous). In this scenario, the infrastructure and SAP versions remain the same, for example, on-premise SAP NetWeaver ABAP 7.0 running on VMWare to the same environment on cloud. Migration from on-premise to another infrastructure platform or SAP version (heterogeneous) can become more complex, especially when combined with a DB conversion or application server upgrade.
 
 For a list of migration options and tools, see [Moving SAP Workloads to IBM Cloud](https://cloud.ibm.com/docs/sap?topic=sap-faq-moving-sap-workloads#faq-moving-sap-workloads-overview).
 
+## SAP migration categories
+{: #SAP-categories}
+
 There are two types of SAP migration categories:
 
-Homogeneous - Target has the same OS and software versions as the source
+1. Homogeneous: Target has the same OS and software versions as the source
 
-Heterogeneous - Target has a different OS, software or database type or version than the source
+2. Heterogeneous: Target has a different OS, software, database type, or version than the source
 
-The following tables summarize various approaches for a homogeneous and heterogeneous migration; all dependent on client environment(s) and preferences.
+The following tables summarize various approaches for a homogeneous and heterogeneous migration; all dependent on client environments and preferences.
 
-**Homogeneous Migration:**
+### Homogeneous Migration
 
-|Migration Method                                        |Technique Summary                                                                                                                                                   |Advantages and Concerns                                                                                                                                                               |Associated Tools                                                                                                                                                                                     |
-|---|---|---|---|
-| Virtual Machine (VM) Backup and Restore                     | Use specialty tools to back up entire SAP instance(s) as virtual machine images and restore to VPC as Virtual server instances (VSIs).                                  |Lift and shift operation.                                                                                                                                                             |[Rackware RMM](https://cloud.ibm.com/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPVJNTSNzZWFyY2hfcmVzdWx0cw%3D%3D) \n [Wanclouds VPC+](https://cloud.ibm.com/catalog/services/custom-migrations-and-disaster-recovery-as-a-service?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPXdhbmNsb3VkcyNzZWFyY2hfcmVzdWx0cw%3D%3D)
+| Migration method | Technique summary | Advantages and concerns | Associated tools |
+| -------------- | -------------- | -------------- | -------------- |
+| Virtual Machine (VM) Backup and Restore                     | Use specialty tools to back up entire SAP instance(s) as virtual machine images and restore to VPC as Virtual server instances (VSIs).                                  |Lift and shift operation.                                                                                                                                                             |* [Rackware RMM](/catalog/content/IBM-MarketPlace-P2P-1.3-22935832-bd76-49ab-b53e-12fc5d04c266-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPVJNTSNzZWFyY2hfcmVzdWx0cw%3D%3D) \n * [Wanclouds VPC+](/catalog/services/custom-migrations-and-disaster-recovery-as-a-service?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2c%2Fc2VhcmNoPXdhbmNsb3VkcyNzZWFyY2hfcmVzdWx0cw%3D%3D)
 |                                                             |                                                                                                                                                                         |Ensure tooling can support delta replication after the point-in-time move.                                                                                                            |
-|                                                             |                                                                                                                                                                         |Depending upon the tools used, post migration adjustments may be necessary to mesh with the target environment in terms of network/systems addressing, interface enablement, etc      |                                                                                                                                                                                                          |
-| Database Backup and Restore                                 | Backup the source database using native DBMS tools. Restore backup copy to a \"shell\" copy of source system prebuilt on PowerVS, using identical versions of software. |Time to transfer large database backups can be an issue.                                                                                                                              | SAP software to build \"shell\" system
-|                                                             |                                                                                                                                                                         |Target needs same/compatible vendor software to restore from backups file(s) received.                                                                                                | IBM Storage Protect \n Veeam                                                                                                                                                                  |
-| Fresh Build and Copy the Config                             | Build a fresh copy of the SAP system on PowerVS and copy/reenter configuration parameters as required.                                                                  | Good for applications and middleware servers not requiring data transfer. Risk of error introduction if post installation manual procedures are applied to reproduce exact configuration. | SAP software to build \"shell\" system;                                                                                                                                                                  |
-| Database Replication/Continuous Data Protection (CDP) Tools | Establish replication between source replication and target database constructed on VPC.                                                                            | Verify that replication is supported between the source version of the database and the target version across the distances involved                                                      | SAP software to build \"shell\" system; Vendor specific database tools to configure and administer database replication (i.e. SQL Always on replication; HANA System Replication, Oracle DataGuard etc.) |
+|                                                             |                                                                                                                                                                         |Depending on the tools used, post migration adjustments might be necessary to mesh with the target environment in terms of network and systems addressing, interface enablement, etc.      |                                                                                                                                                                                                          |
+| Database backup and restore                                 | Backup the source database using native DBMS tools. Restore backup copy to a \"shell\" copy of source system prebuilt on PowerVS, using identical versions of software. |The time to transfer large database backups can be an issue.                                                                                                                              | SAP software to build \"shell\" system
+|                                                             |                                                                                                                                                                         |Target needs same and compatible vendor software to restore from backups file(s) received.                                                                                                | * IBM Storage Protect \n * Veeam                                                                                                                                                                  |
+| Fresh build and copy the config                             | Build a fresh copy of the SAP system on PowerVS and copy and re-enter configuration parameters as required.                                                                  | Good for applications and middleware servers that aren't requiring data transfer. Risk of error introduction if post installation manual procedures are applied to reproduce exact configuration. | SAP software to build \"shell\" system                                                                                                                                                                  |
+| Database replication and Continuous Data Protection (CDP) tools | Establish replication between source replication and target database constructed on VPC.                                                                            | Verify that replication is supported between the source version of the database and the target version across the distances involved                                                      | SAP software to build \"shell\" system. Vendor specific database tools to configure and administer database replication, for example, SQL always on replication, HANA System Replication, Oracle DataGuard etc. |
 {: caption="Table 1. Homogeneous Migration" caption-side="bottom"}
 
 **Heterogeneous Migration:**

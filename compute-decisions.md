@@ -15,8 +15,8 @@ keywords:
 # Architecture decisions for compute
 {: #compute-decisions}
 
-| Architecture decision | Requirement | Alternative | Decision | Rationale |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
+| Architecture decision | Requirement | Decision | Rationale |
+| -------------- | -------------- | -------------- | -------------- |
 |Bare Metal (NetWeaver) |Target environment to match specific workload requirements and be SAP certified |Bare Metal on VPC| Choose bare metal on VPC for larger SAP deployments with higher SAPS processing requirements. Limited to low memory requirements. If memory is a concern, VSIs are beneficial. |
 |Virtual Servers (Netweaver)        |Target environment to match workload requirements and be SAP certified          | VSI on VPC        |Choose VSIs for a more cost-effective approach and when deployments don't require the larger number of SAPs bare metal can provide. VSI profiles can satisfy larger memory requirements than bare metal.|
 |Bare Metal (HANA)             |Target environment to match workload requirements and be SAP certified          |Bare Metal on VPC |Choose bare metal on VPC for larger SAP requirements. However, memory limitations exist on the bare metal server profiles for HANA. If memory is a concern, VSIs are beneficial. |

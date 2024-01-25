@@ -36,10 +36,9 @@ The SAP on VPC architecture provides a high-level summary of the pattern, an SAP
 
 The primary region supports production workloads on VPC running on either SAP Certified Bare Metal or VSIs. The secondary region supports nonproduction and disaster recovery workloads if the customer has DR requirements. The components deployed to the Edge VPC provide security functions and resource isolation to the {{site.data.keyword.Bluemix_notm}} workloads.
 
-![A diagram of a computer network description automatically generated](./image1.svg){: caption="Figure 1. A diagram of a computer network description automatically
-generated" caption-side="bottom"}
+![A diagram of a computer network description automatically generated](./SAP-MZR-High-Level.svg){: caption="Figure 1" caption-side="bottom"}
 
-The diagram maps the flow of a computer network description that's automatically generated: 
+The diagram maps the flow of a computer network description that's automatically generated:
 
 1.  Client network connectivity is accomplished through Direct Link with VPN access for MSPs.
 
@@ -51,8 +50,7 @@ The diagram maps the flow of a computer network description that's automatically
 
 5.  Global Transit Gateway connecting the Workload VPC across regions to facilitate replication for DR purposes.
 
-![A diagram of a computer network description automatically generated](./image2.svg){: caption="Figure 2. A diagram of a computer network description automatically
-generated" caption-side="bottom"}
+![A diagram of a computer network description automatically generated](./SAP-HA-DR.svg){: caption="Figure 2" caption-side="bottom"}
 
 Figure 2 illustrates a more detailed network and component architecture for a single-zone, multi-region deployment to facilitate disaster recovery.
 
@@ -97,8 +95,7 @@ The architecture framework, described in [Introduction to the Architecture Frame
 
 The Figure 3 shows the domains that are covered in this solution.
 
-![A diagram of a computer network description automatically generated](./image3.svg){: caption="Figure 3. A diagram of a computer network description automatically
-generated" caption-side="bottom"}
+![A diagram of a computer network description automatically generated](./heat-map-SAP-on-VPC.svg){: caption="Figure 3" caption-side="bottom"}
 
 ## Requirements
 {: #requirements}
@@ -108,7 +105,7 @@ The following represents a baseline set of requirements, which are applicable to
 | Aspects | Requirements |
 | -------------- | -------------- |
 | Network            | * Enterprise connectivity to customer data centers to provide access to applications from on-premises \n * Map and convert existing customer SAP Network functionality into IBM Cloud and VPC networking services. \n * Migrate and redeploy customer IP addressing scheme within the IBM Cloud environment. \n * Provide network isolation with the ability to separate applications based on attributes such as data classification, public instead of internal apps and function. \n *  |
-| Security            | * Provide data encryption in transit and at rest. \n * Migrate customer IDS/IAM Services to target IBM Cloud environment. \n * Retain the same firewall rulesets across existing DCs. \n * Firewalls must be restrictively configured to provide advanced security features and prevent all traffic, both inbound and outbound, except that which is required, documented, and approved, and include IPS/IDS services. |
+| Security            | * Provide data encryption in transit and at rest. \n * Migrate customer Intrusion Dectection and Identity Acceess and Management Services to target IBM Cloud environment. \n * Retain the same firewall rulesets across existing DCs. \n * Firewalls must be restrictively configured to provide advanced security features and prevent all traffic, both inbound and outbound, except that which is required, documented, and approved, and include Intrusion Protection(IPS)/Intrusion Detection(IDS) services. |
 | Resiliency         | * Multi-site capability to support a disaster recovery strategy and solution that use IBM Cloud infrastructure DR capabilities. \n * Provide backups for data retention. \n * RTO/RPO = 4 hours/15 minutes; Rollback to original environments should occur no later than specified RTOs. \n * 99.95 Availability. \n * Backups. \n * Production: Daily Full, logs per SAP product standard, 30 days retention time. \n * Non-production: Weekly full, logs per SAP product standard, 14 days retention time. |
 | Service Management           | * Provide health and system monitoring with ability to monitor and correlate performance metrics and events and provide alerting across applications and infrastructure \n * Ability to diagnose issues and exceptions and identify error sources. \n * Automate management processes to keep applications and infrastructure secure, up to date, and available. |
 | Other     | * Migrate SAP workloads from existing data center to IBM Cloud VPC. \n * Customer's SAP systems and applications that are run on NetWeaver (application) and HANA (DB), AnyDB, or S/4 HANA. \n * Provide an Image Replication migration solution that minimizes disruption during cut-over. \n * Cloud infrastructure for the proposed IaaS solution must be SAP Certified. \n * IBM Cloud IaaS is deployed to support SAP and surrounding non-SAP workloads. \n * Customer does not want to adopt [RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) currently but wants to consider a Cloud deployment solution that facilitates a future RISE transformation |
@@ -135,11 +132,11 @@ The following represents a baseline set of requirements, which are applicable to
 |                                    | Cloud Object Storage Encryption                                                                                                                                                                             | Cloud Object Storage Encryption at rest                                                  |
 |                                    | HANA Data Volume Encryption (DVE)                                                                                                                                                                           | HANA Database Encryption at rest                                                         |
 |                                    | [IAM](/docs/account?topic=account-cloudaccess)                                                                                                                           | IBM Cloud Identity & Access Management                                                   |
-|                                    | Privileged Identity and Access Management                                                                                                                                                                   | BYO Bastion host (or Privileged Access Gateway) with PAM SW deployed in Edge VPC         |
-|                                    | [BYO Bastion Host on VPC VSI with PAM SW](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport) | Remote access with Privileged Access Management                                          |
+|                                    | Privileged Identity and Access Management                                                                                                                                                                   | Bring your own Bastion host (or Privileged Access Gateway) with PAM SW deployed in Edge VPC         |
+|                                    | [Bring your own Bastion Host on VPC VSI with PAM SW](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport) | Remote access with Privileged Access Management                                          |
 |                                    | [Virtual Private Clouds (VPCs), Subnets, Security Groups, ACLs](/docs/vpc?topic=vpc-getting-started)                                                                     | Core Network Protection                                                                  |
 |                                    | [Cloud Internet Services (CIS)](/docs/cis?topic=cis-getting-started)                                                                                                                   | DDoS protection and Web App Firewall                                                     |
-|                                    | One of the following: \n - [Fortigate](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global) \n - [Palo Alto](https://cloud.ibm.com/catalog/content/ibmcloud-vmseries-1.9-6470816d-562d-4627-86a5-fe3ad4e94b30-global)                                                    | - IPS/IDS protection at all ingress/egress \n- Unified Threat Management (UTM) Firewall                                            |
+|                                    | One of the following: \n - [Fortigate](https://cloud.ibm.com/catalog/content/ibm-fortigate-AP-HA-terraform-deploy-5dd3e4ba-c94b-43ab-b416-c1c313479cec-global) \n - [Palo Alto](https://cloud.ibm.com/catalog/content/ibmcloud-vmseries-1.9-6470816d-562d-4627-86a5-fe3ad4e94b30-global)                                                    | - Intrusion Protection(IPS)/Intrusion Detection(IDS) at all ingress/egress \n- Unified Threat Management (UTM) Firewall                                            |
 | Resiliency                         | HANA System Replication (HSR)                                                                                                                                                                               | Provide 99.95% availability for HANA DB                                                  |
 |                                    | [Veeam](/docs/vpc?topic=vpc-about-veeam)                                                                                                                                               | Controls both the backups and restores of all VSIs or BMs. Veeam Backup & Replication 12 |
 | Service Management (Observability) | [IBM Cloud Monitoring](/docs/monitoring?topic=monitoring-about-monitor)                                                                                                                | Apps and operational monitoring                                                          |

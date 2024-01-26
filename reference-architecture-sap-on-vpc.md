@@ -29,50 +29,48 @@ content-type: reference-architecture
 {: toc-content-type="reference-architecture"}
 {: toc-version="1.0"}
 
-## Architecture diagram
-{: #architecture-diagram}
-
 The SAP on VPC architecture provides a high-level summary of the pattern for an SAP single-zone, multi-region deployment on {{site.data.keyword.vpc_short}}.
 
 The primary region supports production workloads on VPC running on either SAP-certified  {{site.data.keyword.baremetal_short}} or VSIs. The secondary region supports nonproduction and disaster recovery workloads if the customer has DR requirements. The components deployed to the Edge VPC provide security functions and resource isolation to the {{site.data.keyword.Bluemix_notm}} workloads.
+
+## Architecture diagram
+{: #architecture-diagram}
 
 ![A diagram of a computer network description automatically generated](./image1.svg){: caption="Figure 1" caption-side="bottom"}
 
 The diagram maps the flow of a computer network description that's automatically generated:
 
-1.  Client network connectivity is accomplished through Direct Link with VPN access for MSPs.
+- Client network connectivity is accomplished through Direct Link with VPN access for MSPs.
 
-2.  An Edge VPC is deployed which contains routing and security functions.
+-  An Edge VPC is deployed which contains routing and security functions.
 
-3.  Transit Gateway to the Workload VPC hosting the SAP application and databases.
+- Transit Gateway to the Workload VPC hosting the SAP application and databases.
 
-4.  Public connectivity also routes through Cloud Internet Services (CIS) which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
+- Public connectivity also routes through Cloud Internet Services (CIS) which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
 
-5.  Global Transit Gateway connecting the Workload VPC across regions to facilitate replication for DR purposes.
+- Global Transit Gateway connecting the Workload VPC across regions to facilitate replication for DR purposes.
 
-Figure 2 illustrates a more detailed network and component architecture for a single-zone, multi-region deployment to facilitate disaster recovery.
+![A diagram of a computer network description automatically generated](./image2.svg){: caption="Figure 2: Detailed network and component architecture for a single-zone, multi-region deployment to facilitate disaster recovery" caption-side="bottom"}
 
-![A diagram of a computer network description automatically generated](./image2.svg){: caption="Figure 2" caption-side="bottom"}
+- Two separate {{site.data.keyword.Bluemix_notm}} regions, one containing production, the other containing both nonproduction and DR.
 
-1.  Two separate {{site.data.keyword.Bluemix_notm}} regions, one containing production, the other containing both nonproduction and DR.
+- Client network connectivity is accomplished through Direct Links to each region with VPN access for managed service providers.
 
-2.  Client network connectivity is accomplished through Direct Links to each region with VPN access for managed service providers.
+- An Edge VPC is deployed which contains routing and security functions. For security purposes, all ingress and egress traffic routes through the Edge VPC. It contains an sFTP server, Bastion host (jump), Firewalls providing advanced security functions and the SAP router and Web Dispatcher.
 
-3.  An Edge VPC is deployed which contains routing and security functions. For security purposes, all ingress and egress traffic routes through the Edge VPC. It contains an sFTP server, Bastion host (jump), Firewalls providing advanced security functions and the SAP router and Web Dispatcher.
+- The Edge VPC is connected to the workload VPC through a local Transit Gateway.
 
-4.  The Edge VPC is connected to the workload VPC through a local Transit Gateway.
+- Public connectivity routes through Cloud Internet services, which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
 
-5.  Public connectivity routes through Cloud Internet services, which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
+- The VPC APP subnet contains SAP components that are hosted on redundant SAP certified VSIs or Bare metal that uses either local storage (BM) or shared block storage in an [SAP Scale-out](/docs/sap?topic=sap-refarch-hana-scaleout#network-layout-for-scale-out-configurations-2) environment.
 
-6.  The VPC APP subnet contains SAP components that are hosted on redundant SAP certified VSIs or Bare metal that uses either local storage (BM) or shared block storage in an [SAP Scale-out](/docs/sap?topic=sap-refarch-hana-scaleout#network-layout-for-scale-out-configurations-2) environment.
+- The VPC DB subnet hosts the SAP database, in this case HANA hosted on SAP certified VSIs or Bare metal that uses either local storage (BM) or block storage.
 
-7.  The VPC DB subnet hosts the SAP database, in this case HANA hosted on SAP certified VSIs or Bare metal that uses either local storage (BM) or block storage.
+- Virtual Private endpoints are used to provide connectivity to cloud native services from each VPC
 
-8.  Virtual Private endpoints are used to provide connectivity to cloud native services from each VPC
+- Global Transit Gateway connecting the core and workload VPC across regions for data replication purposes between the two regions.
 
-9.  Global Transit Gateway connecting the core and workload VPC across regions for data replication purposes between the two regions.
-
-10. Multiple instances of redundant VSIs or BMs are used to provide 99.95% availability within a zone
+- Multiple instances of redundant VSIs or BMs are used to provide 99.95% availability within a zone
 
 ## Design scope
 {: #design-scope}
@@ -91,11 +89,10 @@ Following the [architecture framework](/docs/architecture-framework?topic=archit
 
 -   **Service Management**: Monitoring, Logging, Alerting, Management, and Orchestration
 
-The architecture framework, described in [Introduction to the Architecture Framework](/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains. The requirements are architectural areas that need to be considered for any enterprise solution. It can be used as a guide to make the necessary design and component choices to ensure that you have considered applicable requirements for each aspect and domain. After you have identified the requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
+The architecture framework, described in [Introduction to the architecture framework](/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains. The requirements are architectural areas that need to be considered for any enterprise solution. It can be used as a guide to make the necessary design and component choices to ensure that you have considered applicable requirements for each aspect and domain. After you have identified the requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
-The Figure 3 shows the domains that are covered in this solution.
-
-![A diagram of a computer network description automatically generated](./heat-map-SAP-on-VPC.svg){: caption="Figure 3" caption-side="bottom"}
+![A diagram of a computer network description automatically generated](./heat-map-SAP-on-VPC.svg){: caption="Figure 3:
+The domains that are covered in this solution " caption-side="bottom"}
 
 ## Requirements
 {: #requirements}

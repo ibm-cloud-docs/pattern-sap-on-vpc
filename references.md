@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-26"
+  years: 2023, 2024
+lastupdated: "2024-01-25"
 
 subcollection: pattern-sap-on-vpc
 
@@ -15,12 +15,14 @@ keywords:
 # References
 {: #references}
 
-[IBM Cloud Virtual Private Cloud (VPC) Infrastructure environment introduction](https://cloud.ibm.com/docs/sap?topic=sap-vpc-env-introduction)
+Review the following references to guide you through the SAP on VPC pattern. 
 
-[IBM Cloud for SAP Get Started](https://cloud.ibm.com/docs/sap?topic=sap-get-started)
+* [IBM Cloud Virtual Private Cloud (VPC) Infrastructure environment introduction](https://cloud.ibm.com/docs/sap?topic=sap-vpc-env-introduction)
 
-[Veeam Plug-ins for Enterprise Applications](https://helpcenter.veeam.com/docs/backup/plugins/overview.html?ver=120)
+* [IBM Cloud for SAP Get Started](https://cloud.ibm.com/docs/sap?topic=sap-get-started)
 
-[Sizing process for SAP Systems](https://cloud.ibm.com/docs/sap?topic=sap-sizing&interface=ui)
+* [Veeam Plug-ins for Enterprise Applications](https://helpcenter.veeam.com/docs/backup/plugins/overview.html?ver=120)
 
-[FAQ -- SAP on IBM Cloud](https://cloud.ibm.com/docs/sap?topic=sap-faq-ibm-cloud-for-sap)
+* [Sizing process for SAP Systems](https://cloud.ibm.com/docs/sap?topic=sap-sizing&interface=ui)
+
+* [FAQs for SAP on IBM Cloud](https://cloud.ibm.com/docs/sap?topic=sap-faq-ibm-cloud-for-sap)

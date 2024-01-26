@@ -26,7 +26,6 @@ The following sections summarize the resiliency architecture decisions for resil
 | High Availability infrastructure                | Provide 99.95% availability for infrastructure        | * Redundant VSIs in an [SAP Scale-out](/docs/sap?topic=sap-refarch-hana-scaleout#network-layout-for-scale-out-configurations-2) deployment with {{site.data.keyword.alb_full}} (ALB) solution on a single-zone can provide an application SLA of 99.95% \n Auto Scale for VPC (optional)  | Minimize cost, implementation and maintenance complexity, potential latency and maximize value with {{site.data.keyword.IBM}} solutions.                                                                                                                                                                                                                                                        |
 {: caption="Table 1. Architecture decisions for High Availability(HA)" caption-side="bottom"}
 
-
 ## Architecture decisions for disaster recovery
 {: #da-arch}
 

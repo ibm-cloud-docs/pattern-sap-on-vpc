@@ -14,7 +14,7 @@ keywords:
 # Architecture decisions for resiliency
 {: #resiliency-decisions}
 
-The following sections summarize the resiliency architecture decisions for risiliency for the SAP on VPC pattern.
+The following sections summarize the resiliency architecture decisions for resiliency for the SAP on VPC pattern.
 
 
 ## Architecture decisions for high availability

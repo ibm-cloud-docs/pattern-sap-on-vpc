@@ -94,7 +94,7 @@ Following the [architecture framework](/docs/architecture-framework?topic=archit
 The architecture framework, described in [Introduction to the architecture framework](/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains. The requirements are architectural areas that need to be considered for any enterprise solution. It can be used as a guide to make the necessary design and component choices to ensure that you have considered applicable requirements for each aspect and domain. After you have identified the requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
 ![A diagram of a computer network description automatically generated](./heat-map-SAP-on-VPC.svg){: caption="Figure 3:
-The domains that are covered in this solution " caption-side="bottom"}
+The domains that are covered in this solution" caption-side="bottom"}
 
 ## Requirements
 {: #requirements}
@@ -143,4 +143,5 @@ The following represents a baseline set of requirements, which are applicable to
 {: caption="Table 2. Components" caption-side="bottom"}
 
 The architecture framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. The following sections contain the considerations and architecture decisions for the aspects and domains that are in play in this solution pattern.
+{: note}
 

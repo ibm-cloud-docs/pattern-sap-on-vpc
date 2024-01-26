@@ -32,7 +32,7 @@ Typically, service management tools are integrated with a centralized service ma
 | Architecture decision | Requirement | Decision | Rationale |
 | -------------- | -------------- | -------------- | -------------- |
 | Monitoring Cloud (Platform) | Monitor and correlate performance metrics and events                                                                                         | Infrastructure: Instana, LogDNA, [{{site.data.keyword.Bluemix_notm}} Monitoring](/docs/monitoring?topic=monitoring-about-monitor)                                                                                | * A fully automated Application Performance Management (APM) solution \n * Automates root-cause analysis by using event correlation, performance thresholds, errors, changes, and analysis of service level agreement (SLA) violations. \n * Provides full context across the application infrastructure that supports all physical, virtual, and serverless services and functions. \n * Provides data and actionable insights to monitor the applications, understand and respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health.                                                    |
-{: caption="Table 1. Architecture decisions for platform monitoring" caption-side="bottom"}
+{: caption="Table 2. Architecture decisions for platform monitoring" caption-side="bottom"}
 
 ## Architecture decisions for logging
 {: #application-logging-sm}
@@ -40,7 +40,7 @@ Typically, service management tools are integrated with a centralized service ma
 | Architecture decision | Requirement | Decision | Rationale |
 | -------------- | -------------- | -------------- | -------------- |
 | Logging                     |Diagnose issues, analyze stack traces and exceptions, identify the source of errors, and monitor different log sources through a single view | [IBM Log Analysis](/docs/log-analysis?topic=log-analysis-getting-started)                 | Recommended tool for infrastructure logging for any non-VMWare workloads. Ingestion and integration with other tools for diagnosis and alerts |
-{: caption="Table 1. Architecture decisions for application monitoring for logging" caption-side="bottom"}
+{: caption="Table 3. Architecture decisions for application monitoring for logging" caption-side="bottom"}
 
 ## Architecture decisions for alerting
 {: #application-alerting-sm}
@@ -48,7 +48,7 @@ Typically, service management tools are integrated with a centralized service ma
 | Architecture decision | Requirement | Decision | Rationale |
 | -------------- | -------------- | -------------- | -------------- |
 | Alerting                    | Provide tracking and alerting functions across application and infrastructure. | * [{{site.data.keyword.Bluemix_notm}} Activity Tracker with LogDNA](/docs/activity-tracker?topic=activity-tracker-getting-started) \n * Pager Duty, ServiceNow (SNOW), and Customer SIEM \n * Instana | Full stack observability for application and infrastructure | {{site.data.keyword.Bluemix_notm}} Activity Tracker provides interfaces to capture, store, view, search, and monitor API activity and supports the configuration of alerts to send notifications on one or more target channels |
-{: caption="Table 1. Architecture decisions for alerting" caption-side="bottom"}
+{: caption="Table 4. Architecture decisions for alerting" caption-side="bottom"}
 
 ## Architecture decisions for management
 {: #application-management-sm}
@@ -56,4 +56,4 @@ Typically, service management tools are integrated with a centralized service ma
 | Architecture decision | Requirement | Decision | Rationale |
 | -------------- | -------------- | -------------- | -------------- |
 | Management and orchestration | Automate management processes to keep applications and infrastructure secure, up to date, and available | Ansible and Terraform| |
-{: caption="Table 1. Architecture decisions for management and orchestration" caption-side="bottom"}
+{: caption="Table 5. Architecture decisions for management and orchestration" caption-side="bottom"}

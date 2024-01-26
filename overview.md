@@ -24,7 +24,7 @@ The objective of this document is to provide an {{site.data.keyword.IBM}} soluti
 
  SAP configuration and SAP component deployment scenarios aren't covered in the solution design. It is limited to {{site.data.keyword.Bluemix_short}} infrastructure options to support SAP workloads.
 
-Enterprise-class, mission-critical workloads need to be secure, resilient, and provide high availability (HA) and disaster recovery (DR). This pattern can be used as a guide to meet typical customer requirements and provide a base reference solution for a secure and resilient SAP NetWeaver/HANA or SAP NetWeaver/AnyDB deployment to {{site.data.keyword.vpc_short}}.
+Enterprise-class, mission-critical workloads need to be secure, resilient, and provide high availability (HA) and disaster recovery (DR). This pattern can be used as a guide to meet typical customer requirements and provide a base reference solution for a secure and resilient SAP NetWeaver and HANA or SAP NetWeaver and AnyDB deployment to {{site.data.keyword.vpc_short}}.
 
 It supports the deployment of SAP Business Applications running on SAP NetWeaver, SAP HANA or SAP AnyDB, and other SAP products by using other technologies (SAP Content Server, or newer applications such as SAP Data Intelligence).
 
@@ -36,7 +36,7 @@ It supports the deployment of SAP Business Applications running on SAP NetWeaver
 
 -   Supplementing an existing private cloud architecture
 
-Enterprise-class, mission-critical workloads need to be resilient and provide HA and DR. This pattern illustrates a single-zone, multi-region design deployed to {{site.data.keyword.vpc_short}}, which can provide both DR and HA to provide 99.95% availability for an SAP NetWeaver/HANA or SAP NetWeaver/AnyDB solution to meet typical customer requirements.
+Enterprise-class, mission-critical workloads need to be resilient and provide HA and DR. This pattern illustrates a single-zone, multi-region design deployed to {{site.data.keyword.vpc_short}}, which can provide both DR and HA to provide 99.95% availability for an SAP NetWeaver and HANA or SAP NetWeaver and AnyDB solution to meet typical customer requirements.
 
 The following documentation provides architecture, design considerations, and guidance for deploying the infrastructure to support SAP workloads, including:
 

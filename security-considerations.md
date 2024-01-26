@@ -23,7 +23,7 @@ Implementation of firewall(s) in the Transit/Edge can secure and route public tr
 
 Each of the VPCs and associated subnets can also be isolated by implementing network access control lists (ACLs) to allow only the required traffic to specific cloud resources.
 
-Enable logging to facilitate the firewall activity analysis if needed to meet client security IPS/IDS requirements.
+Enable logging to facilitate the firewall activity analysis if needed to meet client security Intrustion Prevention and Instrusion Detection requirements.
 
 All traffic, both public and private, should route through the Edge/Transit VPC for routing, isolation, and logging.
 

@@ -64,7 +64,7 @@ To learn more about single-zone resilient SAP deployment, see [Network layout fo
 ## SAP Native Database backup tools
 {: #SAP-database-tools}
 
-A combination of SAP Native Database Backup tools is used to deliver the resiliency services such as:
+A combination of SAP Native Database Backup tools are used to deliver the resiliency services:
 
 * DBACOCKPIT
 
@@ -72,15 +72,18 @@ A combination of SAP Native Database Backup tools is used to deliver the resilie
 
 * Backint for SAP Database backups
 
-To support database recovery for points in time going back at least one month, a daily database backup is required, along with redo log backups every 15 minutes.
 
-* For long-term recovery of data, an additional monthly backup is suggested with a one-year data retention or as determined by the customer.
+Review the following information about the backup tools and their requirements: 
 
-* The daily log backup frequency for production DB should be less than or equal to the customer desired RPO parameter for their Business Continuity Plan
+* To support database recovery going back at least one month, a daily database backup is required, along with redo log backups every 15 minutes.
 
-* Production System Monthly full retained for 60 days. Daily Full retained for 1 week. Daily incremental retained for 60 days. Weekly Full retained for 30 days.
+* Long-term recovery of data: Additional monthly backup is suggested with a one year data retention or as determined by the customer.
 
-* Non-Productions System Monthly full retained for 60 days. Weekly Full retained for 14 days week. Daily incremental retained for 60 days.
+* Frequency: The daily log backup frequency for production database should be less than or equal to the customer desired RPO parameter for their Business Continuity Plan.
+
+* Retention: Production system monthly full is retained for 60 days. Daily full is retained for 1 week. Daily incremental retained for 60 days. Weekly Full retained for 30 days.
+
+* Nonproductions system monthly full retained for 60 days. Weekly ull retained for 14 days week. Daily incremental retained for 60 days.
 
 Consider the largest database size for full backups with room for addition growth. It's recommended to complement the backup solution with Daily snapshots for production.
 {: tip}

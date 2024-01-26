@@ -31,6 +31,7 @@ There are two types of SAP migration categories:
 The following tables summarize various approaches for a homogeneous and heterogeneous migration; all dependent on client environments and preferences.
 
 ### Homogeneous Migration
+{: #SAP-migration-homogeneous}
 
 | Migration method | Technique summary | Advantages and concerns | Associated tools |
 | -------------- | -------------- | -------------- | -------------- |
@@ -43,7 +44,8 @@ The following tables summarize various approaches for a homogeneous and heteroge
 | Database replication and Continuous Data Protection (CDP) tools | Establish replication between source replication and target database constructed on VPC.                                                                            | Verify that replication is supported between the source version of the database and the target version across the distances involved                                                      | SAP software to build \"shell\" system. Vendor specific database tools to configure and administer database replication, for example, SQL always on replication, HANA System Replication, Oracle DataGuard etc. |
 {: caption="Table 1. Homogeneous Migration" caption-side="bottom"}
 
-**Heterogeneous Migration:**
+### Heterogeneous Migration:**
+{: #SAP-migration-heterogeneous}
 
 | Migration method | Technique summary | Advantages and concerns | Associated tools |
 | -------------- | -------------- | -------------- | -------------- |

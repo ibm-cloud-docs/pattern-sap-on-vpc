@@ -38,17 +38,19 @@ The following tables show a comparison of the different deployment options.
 |                             |                 |Medium/high cost                                                                                        |                                                                                    |
 | Multi-zone, Multi-Region    | 99.99%          |Protection from region outages                                                                          |Disaster Recovery
 |                             |                 |High cost                                                                                               |Business continuity policies with cross-geo or cross-country requirements       |
+
 [^tabletext]: Based on Cloud infrastructure [SLA.](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document) Does not represent application availability.  
+
 [^tabletext2]: Three or more instances in separate Availability Zones
 {: caption="Table 1. Resiliency options" caption-side="bottom"}
-
-## Add new section title
-{: #add}
 
 SAP does not support the application layer and database to be deployed across different zones. The application and database layers must exist in the same availability zone. Therefore, the highest availability that can be supported is 99.95%.
 {: important}
 
 For more information, see [High Availability and Resiliency on IBM Cloud](/docs/ha-infrastructure?topic=ha-infrastructure-landing-about-ha-dr-backup).
+
+## Availability considerations
+{: #availability-considerations}
 
 99.95% infrastructure availability can be achieved in a single zone by deploying multiple server instances for each of the security, application, and database components. To maximize investment on DR infrastructure so DR infrastructure is not idle, it's recommended to have cross-region passive DR with the DR region hosing nonproduction workloads. This can optimize the DR environment for additional cost savings. The IBM Cloud environment does not support any preconfigured high-availability (HA) scenarios for SAP. However, HA scenarios can be configured based on the HA extension for the operating system. HA extensions are created by adding the required hardware and the required software components to SAP landscapes.
 

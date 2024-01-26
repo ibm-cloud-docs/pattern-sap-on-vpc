@@ -17,12 +17,12 @@ keywords:
 
 Review the following references to guide you through the SAP on VPC pattern. 
 
-* [IBM Cloud Virtual Private Cloud (VPC) Infrastructure environment introduction](https://cloud.ibm.com/docs/sap?topic=sap-vpc-env-introduction)
+* [{{site.data.keyword.vpc_full}} (VPC) Infrastructure environment introduction](https://cloud.ibm.com/docs/sap?topic=sap-vpc-env-introduction)
 
-* [IBM Cloud for SAP Get Started](https://cloud.ibm.com/docs/sap?topic=sap-get-started)
+* [{{site.data.keyword.Bluemix_notm}} for SAP Get Started](https://cloud.ibm.com/docs/sap?topic=sap-get-started)
 
 * [Veeam Plug-ins for Enterprise Applications](https://helpcenter.veeam.com/docs/backup/plugins/overview.html?ver=120)
 
 * [Sizing process for SAP Systems](https://cloud.ibm.com/docs/sap?topic=sap-sizing&interface=ui)
 
-* [FAQs for SAP on IBM Cloud](https://cloud.ibm.com/docs/sap?topic=sap-faq-ibm-cloud-for-sap)
+* [FAQs for SAP on {{site.data.keyword.Bluemix_notm}}](https://cloud.ibm.com/docs/sap?topic=sap-faq-ibm-cloud-for-sap)

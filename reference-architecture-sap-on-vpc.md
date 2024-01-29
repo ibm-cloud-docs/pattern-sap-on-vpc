@@ -29,26 +29,24 @@ content-type: reference-architecture
 {: toc-content-type="reference-architecture"}
 {: toc-version="1.0"}
 
-The SAP on VPC architecture provides a high-level summary of the pattern for an SAP single-zone, multi-region deployment on {{site.data.keyword.vpc_short}}.
+The SAP on VPC architecture illustrated in figure 1 provides a high-level summary of the pattern for an SAP single-zone, multi-region deployment on {{site.data.keyword.vpc_short}}.
 
 The primary region supports production workloads on VPC running on either SAP-certified  {{site.data.keyword.baremetal_short}} or VSIs. The secondary region supports nonproduction and disaster recovery workloads if the customer has DR requirements. The components deployed to the Edge VPC provide security functions and resource isolation to the {{site.data.keyword.Bluemix_notm}} workloads.
 
 ## Architecture diagram
 {: #architecture-diagram}
 
-![A diagram of a computer network description automatically generated](./image1.svg){: caption="Figure 1: Automatically generated computer network description." caption-side="bottom"}
+![A diagram of a computer network description automatically generated](./image1.svg){: caption="Figure 1: High level architecture." caption-side="bottom"}
 
-The diagram maps the flow of a computer network description that's automatically generated:
+1. Client network connectivity is accomplished through Direct Link with VPN access for MSPs.
 
-- Client network connectivity is accomplished through Direct Link with VPN access for MSPs.
+2.  An Edge VPC is deployed which contains routing and security functions.
 
--  An Edge VPC is deployed which contains routing and security functions.
+3. Transit Gateway to the Workload VPC hosting the SAP applications and databases.
 
-- Transit Gateway to the Workload VPC hosting the SAP applications and databases.
+4. Public connectivity also routes through Cloud Internet Services (CIS) which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
 
-- Public connectivity also routes through Cloud Internet Services (CIS) which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
-
-- Global Transit Gateway connecting the Workload VPC across regions to facilitate replication for DR purposes.
+5. Global Transit Gateway connecting the Workload VPC across regions to facilitate replication for DR purposes.
 
 ![A diagram of a computer network description automatically generated](./image2.svg){: caption="Figure 2: Detailed network and component architecture for a single-zone, multi-region deployment" caption-side="bottom"}
 
@@ -144,4 +142,3 @@ The following represents a baseline set of requirements, which are applicable to
 
 The architecture framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. The following sections contain the considerations and architecture decisions for the aspects and domains that are in play in this solution pattern.
 {: note}
-

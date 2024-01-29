@@ -52,25 +52,25 @@ The primary region supports production workloads on VPC running on either SAP-ce
 
 In this view, the diagram outlines a detailed network and component architecture for a single-zone, multi-region deployment to faciliate disaster recovery.
 
-- Two separate {{site.data.keyword.Bluemix_notm}} regions, one containing production, the other containing both nonproduction and DR.
+1. Two separate {{site.data.keyword.Bluemix_notm}} regions, one containing production, the other containing both nonproduction and DR.
 
-- Client network connectivity is accomplished through Direct Links to each region with VPN access for managed service providers.
+2. Client network connectivity is accomplished through Direct Links to each region with VPN access for managed service providers.
 
-- An Edge VPC is deployed which contains routing and security functions. For security purposes, all ingress and egress traffic routes through the Edge VPC. It contains an sFTP server, Bastion host (jump), Firewalls providing advanced security functions and the SAP router and Web Dispatcher.
+3. An Edge VPC is deployed which contains routing and security functions. For security purposes, all ingress and egress traffic routes through the Edge VPC. It contains an sFTP server, Bastion host (jump), Firewalls providing advanced security functions and the SAP router and Web Dispatcher.
 
-- The Edge VPC is connected to the workload VPC through a local Transit Gateway.
+4. The Edge VPC is connected to the workload VPC through a local Transit Gateway.
 
-- Public connectivity routes through Cloud Internet services, which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
+5. Public connectivity routes through Cloud Internet services, which can provide load balancing, failover, and DDoS services, then routes to the edge VPC
 
-- The VPC APP subnet contains SAP components that are hosted on redundant SAP certified VSIs or Bare metal that uses either local storage (BM) or shared block storage in an [SAP Scale-out](/docs/sap?topic=sap-refarch-hana-scaleout#network-layout-for-scale-out-configurations-2) environment.
+6. The VPC APP subnet contains SAP components that are hosted on redundant SAP certified VSIs or Bare metal that uses either local storage (BM) or shared block storage in an [SAP Scale-out](/docs/sap?topic=sap-refarch-hana-scaleout#network-layout-for-scale-out-configurations-2) environment.
 
-- The VPC DB subnet hosts the SAP database, in this case HANA hosted on SAP certified VSIs or Bare metal that uses either local storage (BM) or block storage.
+7. The VPC DB subnet hosts the SAP database, in this case HANA hosted on SAP certified VSIs or Bare metal that uses either local storage (BM) or block storage.
 
-- Virtual Private endpoints are used to provide connectivity to cloud native services from each VPC
+8. Virtual Private endpoints are used to provide connectivity to cloud native services from each VPC
 
-- Global Transit Gateway connecting the core and workload VPC across regions for data replication purposes between the two regions.
+9. Global Transit Gateway connecting the core and workload VPC across regions for data replication purposes between the two regions.
 
-- Multiple instances of redundant VSIs or BMs are used to provide 99.95% availability within a zone
+10. Multiple instances of redundant VSIs or BMs are used to provide 99.95% availability within a zone
 
 ## Design scope
 {: #design-scope}

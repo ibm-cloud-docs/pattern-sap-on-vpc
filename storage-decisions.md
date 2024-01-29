@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023
-lastupdated: "2023-12-26"
+  years: 2023, 2024
+lastupdated: "2024-01-25"
 
 subcollection: pattern-sap-on-vpc
 
@@ -15,19 +15,34 @@ keywords:
 # Architecture decisions for storage
 {: #storage-decisions}
 
-|Architecture decision                |Requirement                                                                 |Decision                 |Rationale                                                                    |
-|---|---|---|---|
-| **Workloads -- Bare Metal** |                                                    |                                                                                                                                 |                                                                                                                                                 |
-| Primary Storage             | local file storage on BM                           | Local NVMe storage                                                                                                              | All SAP Certified BM servers have local NVMe storage. There are no options for block or file storage.                                           |
-| Backup Storage              | Backup storage for BM servers                      | Block storage \n Cloud Object Storage                                                                                                                   | -   Cloud Object Storage for lower costs \n -   Combine Block and COS for long-term needs|
-| Archive Storage             | Archive Storage for BM servers                     | Cloud Object Storage                                                                                                            | Cloud Object Storage is used for cost optimized options such as Archiving                                                                       |
-| **Workloads -- VSIs**       |                                                    |                                                                                                                                 |                                                                                                                                                 |
-| Primary Storage             | Primary storage for VSIs                           | Block Storage                                                                                                                   | -   Use a mix of IOPs block storage for production workloads and lower cost storage when high IOPs not required \n-   SAP HANA production systems require 10 IOPS/GB block storage \n-   3 IOPS for application servers \n-   5 IOPS for non production databases \n-   Block allows clustering of volumes at the application layer for higher IOPS                              |
-| Backup Storage              | Backup storage for VSIs                            | Combination of COS and Block Storage                                                                                            | -   Combine Block/Endurance and COS for long-term needs \n -   Cloud Object Storage is used for cost optimized options for Backups  \n -   COS Regional or Cross Regional based on availability|
-| Archive Storage             | Archive storage for VSIs                           | Cloud Object Storage                                                                                                            | Cloud Object Storage Cold Vault or Archiving tier is used for cost optimized options such as Archiving                                          |
-| Data/Storage Migration \n For more migration information see [Moving SAP Workloads](/docs/sap?topic=sap-faq-moving-sap-workloads#faq-moving-sap-workloads-overview)| Migration tooling from existing environment to PowerVS | Migration tooling from existing environment to PowerVS                                                                                               |Image import obviates need for testing and useful for non-prod/PoC systems
-|                                   |                                                        |DB DR Replication                                                                                                                                    |Using Native DB Replication minimizes need for testing efforts
-|                                   |                                                        |SAP Standard Migration Tools                                                                                                                        |SAP Standard Migration options like SWPM, DMO
-|                                   |                                                        |Backup/ Restore tools                                                                                                                                |ASPERA for high-speed data transfer ideal for Migrations
-|                                   |                                                        |Aspera data transfer                                                                                                                                 | Minimize \n -   Business disruption due to migration \n -   Cost and efforts incurred in testing migrated databases|
-{: caption="Table 1. Architecture decisions for storage" caption-side="bottom"}
+The following tables summarize the storage architecture decisions for SAP on VPC:
+
+## Architecture decisions for Bare Metal storage
+{: #bare-metal-storage table}
+
+The following are architecture decisions for Bare Metal storage for this design.
+
+| Architecture decision | Requirement | Decision | Rationale |
+| -------------- | -------------- | -------------- | -------------- |
+| Primary Storage             | Local file storage on bare metal                           | Local Non-Volatile Memory Express (NVMe) storage                                                                                                              | All SAP Certified {{site.data.keyword.baremetal_short}} have local NVMe storage. Block and file storage aren't applicable.                                            |
+| Backup Storage              | Backup storage for {{site.data.keyword.baremetal_short}}                      | Block storage \n {{site.data.keyword.cos_full_notm}}                                                                                                                   | -  {{site.data.keyword.cos_full_notm}} is more cost effective. \n -   Combine block and {{site.data.keyword.cos_full_notm}} for long-term needs.|
+| Archive Storage             | Archive Storage for {{site.data.keyword.baremetal_short}}                     | {{site.data.keyword.cos_full_notm}}                                                                                                            | {{site.data.keyword.cos_full_notm}} is used for cost optimized options such as archiving                                                                       |
+{: caption="Table 1. Architecture decisions for Bare Metal storage" caption-side="bottom"}
+
+
+## Architecture decisions for VSIs
+{: #vsi-storage table}
+
+The following are architecture decisions for VSI storage for this design.
+
+| Architecture decision | Requirement | Decision | Rationale |
+| -------------- | -------------- | -------------- | -------------- |
+| Primary Storage             | Primary storage for VSIs                           | Block Storage                                                                                                                   | -   Use a mix of IOPs block storage for production workloads and less cost storage when high IOPs are not required \n *SAP HANA production systems require 10 IOPS/GB block storage \n * 3 IOPS for application servers \n * 5 IOPS for nonproduction databases \n * Block allows clustering of volumes at the application layer for higher IOPS                              |
+| Backup Storage              | Backup storage for VSIs                            | combination of {{site.data.keyword.cos_full_notm}} and Block Storage                                                                                            | * Combine Block, Endurance, and {{site.data.keyword.cos_full_notm}} for long-term needs \n * {{site.data.keyword.cos_full_notm}} is used for cost optimized options for Backups \n * {{site.data.keyword.cos_full_notm}} Regional or Cross Regional based on availability|
+| Archive Storage             | Archive storage for VSIs                           | {{site.data.keyword.cos_full_notm}}                                                                                                            | {{site.data.keyword.cos_full_notm}} cold vault or archiving tier is used for cost optimized options such as archiving                                          |
+| Data and storage migration \n For more information, see [Moving SAP Workloads](/docs/sap?topic=sap-faq-moving-sap-workloads#faq-moving-sap-workloads-overview)| Migration tools from existing environment to PowerVS | Migration tools from existing environment to PowerVS                                                                                               |Image import removes the need for testing and is useful for nonproduction and PoC systems
+|                                   |                                                        |DB DR replication                                                                                                                                    |Using Native DB replication minimizes the need for testing efforts
+|                                   |                                                        |SAP Standard Migration tools                                                                                                                        |SAP Standard Migration options like SWPM, DMO
+|                                   |                                                        |Backup and restore tools                                                                                                                                |Aspera for high-speed data transfer is ideal for migrations
+|                                   |                                                        |Aspera data transfer                                                                                                                                 | Minimize business disruption due to migration. Minimize the cost and efforts that are incurred in testing migrated databases. |
+{: caption="Table 2. Architecture decisions for VSIs" caption-side="bottom"}

@@ -20,7 +20,7 @@ The following tables summarize the storage architecture decisions for SAP on VPC
 ## Architecture decisions for Bare Metal storage
 {: #bare-metal-storage table}
 
-The following are architecture decisions for Bare Metal workloads for this design.
+The following are architecture decisions for Bare Metal storage for this design.
 
 | Architecture decision | Requirement | Decision | Rationale |
 | -------------- | -------------- | -------------- | -------------- |
@@ -31,9 +31,9 @@ The following are architecture decisions for Bare Metal workloads for this desig
 
 
 ## Architecture decisions for VSIs
-{: #bare-metal-storage table}
+{: #vsi-storage table}
 
-The following are architecture decisions for VSIss for this design.
+The following are architecture decisions for VSI storage for this design.
 
 | Architecture decision | Requirement | Decision | Rationale |
 | -------------- | -------------- | -------------- | -------------- |

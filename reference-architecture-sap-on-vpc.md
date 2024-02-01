@@ -38,7 +38,7 @@ The primary region supports production workloads on VPC running on either SAP-ce
 
 ![A diagram of a computer network description automatically generated](./image1.svg){: caption="Figure 1: High level architecture." caption-side="bottom"}
 
-The diagram illustrates a high level architecture and the numbered items on the diagram correspond to the descriptions below.
+The diagram illustrates a high level architecture and the numbered items on the diagram correspond to the following descriptions:
 
 1. Client network connectivity is accomplished through Direct Link with VPN access for MSPs.
 
@@ -52,7 +52,7 @@ The diagram illustrates a high level architecture and the numbered items on the 
 
 ![A diagram of a computer network description automatically generated](./image2.svg){: caption="Figure 2: Detailed network and component architecture for a single-zone, multi-region deployment" caption-side="bottom"}
 
-In this view, the diagram outlines a detailed network and component architecture for a single-zone, multi-region deployment to faciliate disaster recovery.  The numbered items on the diagram correspond to the descriptions below.
+In this view, the diagram outlines a detailed network and component architecture for a single-zone, multi-region deployment to faciliate disaster recovery.  The numbered items on the diagram correspond to the following descriptions:
 
 1. Two separate {{site.data.keyword.Bluemix_notm}} regions, one containing production, the other containing both nonproduction and DR.
 

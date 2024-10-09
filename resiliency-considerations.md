@@ -42,7 +42,7 @@ The following tables show a comparison of the different deployment options.
 [^tabletext]: Based on Cloud infrastructure [SLA.](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document) Does not represent application availability.  
 
 [^tabletext2]: Three or more instances in separate Availability Zones
-{: caption="Table 1. Resiliency options" caption-side="bottom"}
+{: caption="Resiliency options" caption-side="bottom"}
 
 SAP does not support the application layer and database to be deployed across different zones. The application and database layers must exist in the same availability zone. Therefore, the highest availability that can be supported is 99.95%.
 {: important}

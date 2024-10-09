@@ -27,7 +27,7 @@ The following are architecture decisions for Bare Metal storage for this design.
 | Primary Storage             | Local file storage on bare metal                           | Local Non-Volatile Memory Express (NVMe) storage                                                                                                              | All SAP Certified {{site.data.keyword.baremetal_short}} have local NVMe storage. Block and file storage aren't applicable.                                            |
 | Backup Storage              | Backup storage for {{site.data.keyword.baremetal_short}}                      | Block storage \n {{site.data.keyword.cos_full_notm}}                                                                                                                   | -  {{site.data.keyword.cos_full_notm}} is more cost effective. \n -   Combine block and {{site.data.keyword.cos_full_notm}} for long-term needs.|
 | Archive Storage             | Archive Storage for {{site.data.keyword.baremetal_short}}                     | {{site.data.keyword.cos_full_notm}}                                                                                                            | {{site.data.keyword.cos_full_notm}} is used for cost optimized options such as archiving                                                                       |
-{: caption="Table 1. Architecture decisions for Bare Metal storage" caption-side="bottom"}
+{: caption="Architecture decisions for Bare Metal storage" caption-side="bottom"}
 
 
 ## Architecture decisions for VSIs
@@ -45,4 +45,4 @@ The following are architecture decisions for VSI storage for this design.
 |                                   |                                                        |SAP Standard Migration tools                                                                                                                        |SAP Standard Migration options like SWPM, DMO
 |                                   |                                                        |Backup and restore tools                                                                                                                                |Aspera for high-speed data transfer is ideal for migrations
 |                                   |                                                        |Aspera data transfer                                                                                                                                 | Minimize business disruption due to migration. Minimize the cost and efforts that are incurred in testing migrated databases. |
-{: caption="Table 2. Architecture decisions for VSIs" caption-side="bottom"}
+{: caption="Architecture decisions for VSIs" caption-side="bottom"}

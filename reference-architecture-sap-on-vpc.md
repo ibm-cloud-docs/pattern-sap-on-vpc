@@ -107,7 +107,7 @@ The following represents a baseline set of requirements, which are applicable to
 | Resiliency         | * Multi-site capability to support a disaster recovery strategy and solution that use IBM Cloud infrastructure DR capabilities. \n * Provide backups for data retention. \n * RTO/RPO = 4 hours/15 minutes; Rollback to original environments should occur no later than specified RTOs. \n * 99.95 Availability. \n * Backups. \n * Production: Daily Full, logs per SAP product standard, 30 days retention time. \n * Non-production: Weekly full, logs per SAP product standard, 14 days retention time. |
 | Service Management           | * Provide health and system monitoring with ability to monitor and correlate performance metrics and events and provide alerting across applications and infrastructure \n * Ability to diagnose issues and exceptions and identify error sources. \n * Automate management processes to keep applications and infrastructure secure, up to date, and available. |
 | Other     | * Migrate SAP workloads from existing data center to {{site.data.keyword.Bluemix_notm}} VPC. \n * Customer's SAP systems and applications that are run on NetWeaver (application) and HANA (DB), AnyDB, or S/4 HANA. \n * Provide an Image Replication migration solution that minimizes disruption during cut-over. \n * Cloud infrastructure for the proposed IaaS solution must be SAP Certified. \n * {{site.data.keyword.Bluemix_notm}} IaaS is deployed to support SAP and surrounding non-SAP workloads. \n * Customer does not want to adopt [RISE](https://www.ibm.com/consulting/rise-with-sap?utm_content=SRCWW&p1=Search&p4=43700077624079785&p5=e&gclid=EAIaIQobChMIr9bRlt7LgQMVJdHCBB0cewwcEAAYASAAEgIVgfD_BwE&gclsrc=aw.ds) currently but wants to consider a Cloud deployment solution that facilitates a future RISE transformation |
-{: caption="Table 1. Requirements" caption-side="bottom"}
+{: caption="Requirements" caption-side="bottom"}
 
 ## Components
 {: #components}
@@ -139,7 +139,7 @@ The following represents a baseline set of requirements, which are applicable to
 |                                    | [Veeam](/docs/vpc?topic=vpc-about-veeam)                                                                                                                                               | Controls both the backups and restores of all VSIs or BMs. Veeam Backup & Replication 12 |
 | Service Management (Observability) | [{{site.data.keyword.Bluemix_notm}} Monitoring](/docs/monitoring?topic=monitoring-about-monitor)                                                                                                                | Apps and operational monitoring                                                          |
 |                                    | [IBM Log Analysis](/docs/log-analysis?topic=log-analysis-getting-started)                                                                                                              | Apps and operational logs                                                                |
-{: caption="Table 2. Components" caption-side="bottom"}
+{: caption="Components" caption-side="bottom"}
 
 The architecture framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. The following sections contain the considerations and architecture decisions for the aspects and domains that are in play in this solution pattern.
 {: note}

@@ -14,18 +14,15 @@ toc:
     path: pattern-sap-on-vpc
     description: SAP on VPC Architecture Pattern
     label: SAP on VPC
-
   entries:
   - navgroup:
       id: overview
       topics:
       - overview.md
-
   - navgroup:
       id: architecture
       topics:
       - reference-architecture-sap-on-vpc.md
-
   - navgroup:
       id: plan
       topics:
@@ -59,7 +56,6 @@ toc:
             navtitle: Resiliency
           - topic: service-management-decisions.md
             navtitle: Service Management
-
   - navgroup:
       id: reference
       topics:

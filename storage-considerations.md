@@ -29,4 +29,4 @@ If more storage is required on {{site.data.keyword.baremetal_short}}, for exampl
 Encryption in transit is not supported between {{site.data.keyword.block_storage_is_short}} and {{site.data.keyword.bm_is_short}}.
 {: note}
 
-File shares can be mounted only on supported on Linux&reg; operating systems that support NFS file shares. For specific storage layouts and profiles, see the [compute considerations section](/docs-draft/pattern-sap-on-vpc?topic=pattern-sap-on-vpc-compute-design) and [other storage considerations](/docs/sap?topic=sap-storage-design-considerations)
+File shares can be mounted only on supported on Linux&reg; operating systems that support NFS file shares. For specific storage layouts and profiles, see the [compute considerations section](/docs/pattern-sap-on-vpc?topic=pattern-sap-on-vpc-compute-design) and [other storage considerations](/docs/sap?topic=sap-storage-design-considerations)

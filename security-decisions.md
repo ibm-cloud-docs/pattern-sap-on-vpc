@@ -29,7 +29,8 @@ The following are security architecture decisions for the SAP on VPC pattern.
 ## Architecture decisions for data encryption
 {: #security-decisions-encryption}
 
-| Architecture decision | Requirement | Decision | Rationale | -------------- | -------------- | -------------- | -------------- |
+| Architecture decision | Requirement | Decision | Rationale |
+| -------------- | -------------- | -------------- | -------------- |
 | HANA Data Encryption                    | Ability to encrypt SAP HANA data at rest                                                                                            | HANA Data Volume Encryption (DVE)                                                                                                                | DVE encrypts HANA data at the persistence layer, protecting data stored on disk from unauthorized access at the operating system level.                                                                                                                                                                                       |
 | Data: Encryption in transit            | Ability to encrypt data while in transit, to servers and between servers | FTPs and HTTPs protocols (client to server) \n IPsec and X.509 certificates (file to server)                                                                                                      | [Enable secure end-to-end encryption](/docs/vpc?topic=vpc-file-storage-vpc-eit) of your data when you use file shares with security-group-based access control mode and mount targets with virtual network interfaces. Encryption in transit is not supported on {{site.data.keyword.bm_is_short}}.|
 {: caption="Architecture decisions for encryption" caption-side="bottom"}

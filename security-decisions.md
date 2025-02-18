@@ -26,16 +26,15 @@ The following are security architecture decisions for the SAP on VPC pattern.
 | Backup storage and archive storage        | Ability to encrypt backups                                                                                                          | Cloud Object Storage Encryption                                                                                                                  | By default, all objects that are stored in {{site.data.keyword.cos_full_notm}} are encrypted by using randomly generated keys and an all-or-nothing-transform (AONT). |
 {: caption="Architecture decisions for storage" caption-side="bottom"}
 
-## Architecture decisions for data encryption 
+## Architecture decisions for data encryption
 {: #security-decisions-encryption}
 
-| Architecture decision | Requirement | Decision | Rationale |
- -------------- | -------------- | -------------- | -------------- |
+| Architecture decision | Requirement | Decision | Rationale | -------------- | -------------- | -------------- | -------------- |
 | HANA Data Encryption                    | Ability to encrypt SAP HANA data at rest                                                                                            | HANA Data Volume Encryption (DVE)                                                                                                                | DVE encrypts HANA data at the persistence layer, protecting data stored on disk from unauthorized access at the operating system level.                                                                                                                                                                                       |
 | Data: Encryption in transit            | Ability to encrypt data while in transit, to servers and between servers | FTPs and HTTPs protocols (client to server) \n IPsec and X.509 certificates (file to server)                                                                                                      | [Enable secure end-to-end encryption](/docs/vpc?topic=vpc-file-storage-vpc-eit) of your data when you use file shares with security-group-based access control mode and mount targets with virtual network interfaces. Encryption in transit is not supported on {{site.data.keyword.bm_is_short}}.|
 {: caption="Architecture decisions for encryption" caption-side="bottom"}
 
-## Architecture decisions for identity and access management 
+## Architecture decisions for identity and access management
 {: #security-access}
 
 | Architecture decision | Requirement | Decision | Rationale |

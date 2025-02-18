@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-26"
+lastupdated: "2025-02-18"
 
 subcollection: pattern-sap-on-vpc
 
@@ -17,7 +17,7 @@ keywords:
 
 Resiliency is the ability for a workload to meet a specific target Service Level Objective (SLO), Service Level Availability (SLA), or recover from a service disruption and still meet the required SLA. Resiliency needs to be considered at both the infrastructure and application layers across the entire solution.
 
-A resilient design might include High Availability (HA) and Disaster Recovery (DR) depending on SLA requirements. 
+A resilient design might include High Availability (HA) and Disaster Recovery (DR) depending on SLA requirements.
 
 Disaster recovery is the infrastructure, application layers, and accompanying set of policies and procedures that enable the recovery or continuation of vital technology infrastructure and applications from a natural or human-induced disaster.
 
@@ -39,7 +39,7 @@ The following tables show a comparison of the different deployment options.
 | Multi-zone, Multi-Region    | 99.99%          |Protection from region outages                                                                          |Disaster Recovery
 |                             |                 |High cost                                                                                               |Business continuity policies with cross-geo or cross-country requirements       |
 
-[^tabletext]: Based on Cloud infrastructure [SLA.](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document) Does not represent application availability.  
+[^tabletext]: Based on Cloud infrastructure [SLA.](https://www.ibm.com/support/customer/csol/terms/?id=i126-9268&lc=en#detail-document) Does not represent application availability.
 
 [^tabletext2]: Three or more instances in separate Availability Zones
 {: caption="Resiliency options" caption-side="bottom"}
@@ -47,7 +47,7 @@ The following tables show a comparison of the different deployment options.
 SAP does not support the application layer and database to be deployed across different zones. The application and database layers must exist in the same availability zone. Therefore, the highest availability that can be supported is 99.95%.
 {: important}
 
-For more information, see [High Availability and Resiliency on {{site.data.keyword.Bluemix_notm}}](/docs/ha-infrastructure?topic=ha-infrastructure-landing-about-ha-dr-backup).
+For more information, see [High Availability and Resiliency on {{site.data.keyword.Bluemix_notm}}](/docs/resiliency?topic=resiliency-resiliency-overview).
 
 ## Availability considerations
 {: #availability-considerations}
@@ -73,7 +73,7 @@ A combination of SAP Native Database Backup tools are used to deliver the resili
 * Backint for SAP Database backups
 
 
-Review the following information about the backup tools and their requirements: 
+Review the following information about the backup tools and their requirements:
 
 * To support database recovery that goes back at least one month, a daily database backup is required, along with redo log backups every 15 minutes.
 

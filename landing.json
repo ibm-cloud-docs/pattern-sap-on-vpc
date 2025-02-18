@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "title": "SAP on VPC",
+  "introduction":"This is a landing page for the reference architecture describing how to host SAP on IBM VPC environments.",
+  "section_topics": {
+  "links": [
+    {
+      "title": "Overview",
+      "href": "/docs/pattern-sap-on-vpc?topic=pattern-sap-on-vpc-overview"
+    },
+    {
+      "title": "Reference Architecture",
+      "href": "/docs/pattern-sap-on-vpc?topic=pattern-sap-on-vpc-sap-on-vpc"
+    },
+    {
+      "title": "Planning",
+      "href": "/docs/pattern-sap-on-vpc?topic=pattern-sap-on-vpc-compute-design"
+    }
+  ]
+},
+  "section_architectures": [
+    {
+      "title": "SAP on VPC Architecture Decisions",
+      "href": "/docs/pattern-sap-on-vpc?topic=pattern-sap-on-vpc-compute-decisions",
+      "deployable": false
+    }
+  ]
+ }

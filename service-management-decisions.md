@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-25"
+lastupdated: "2025-02-18"
 
 subcollection: pattern-sap-on-vpc
 
@@ -39,7 +39,7 @@ Typically, service management tools are integrated with a centralized service ma
 
 | Architecture decision | Requirement | Decision | Rationale |
 | -------------- | -------------- | -------------- | -------------- |
-| Logging                     |Diagnose issues, analyze stack traces and exceptions, identify the source of errors, and monitor different log sources through a single view | [IBM Log Analysis](/docs/log-analysis?topic=log-analysis-getting-started)                 | Recommended tool for infrastructure logging for any non-VMWare workloads. Ingestion and integration with other tools for diagnosis and alerts |
+| Logging                     |Diagnose issues, analyze stack traces and exceptions, identify the source of errors, and monitor different log sources through a single view | [IBM Cloud Logs](/docs/cloud-logs)                 | Recommended tool for infrastructure logging for any non-VMWare workloads. Ingestion and integration with other tools for diagnosis and alerts |
 {: caption="Architecture decisions for application monitoring for logging" caption-side="bottom"}
 
 ## Architecture decisions for alerting
@@ -47,7 +47,7 @@ Typically, service management tools are integrated with a centralized service ma
 
 | Architecture decision | Requirement | Decision | Rationale |
 | -------------- | -------------- | -------------- | -------------- |
-| Alerting                    | Provide tracking and alerting functions across application and infrastructure. | * [{{site.data.keyword.Bluemix_notm}} Activity Tracker with LogDNA](/docs/activity-tracker?topic=activity-tracker-getting-started) \n * Pager Duty, ServiceNow (SNOW), and Customer SIEM \n * Instana | Full stack observability for application and infrastructure | {{site.data.keyword.Bluemix_notm}} Activity Tracker provides interfaces to capture, store, view, search, and monitor API activity and supports the configuration of alerts to send notifications on one or more target channels |
+| Alerting                    | Provide tracking and alerting functions across application and infrastructure. | * [{{site.data.keyword.logs_full_notm}}](/docs/cloud-logs) \n * Pager Duty, ServiceNow (SNOW), and Customer SIEM \n * Instana | Full stack observability for application and infrastructure | {{site.data.keyword.Bluemix_notm}} Activity Tracker provides interfaces to capture, store, view, search, and monitor API activity and supports the configuration of alerts to send notifications on one or more target channels |
 {: caption="Architecture decisions for alerting" caption-side="bottom"}
 
 ## Architecture decisions for management

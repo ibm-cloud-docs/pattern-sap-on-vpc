@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-25"
+lastupdated: "2025-02-18"
 
 subcollection: pattern-sap-on-vpc
 
@@ -138,7 +138,7 @@ The following represents a baseline set of requirements, which are applicable to
 | Resiliency                         | HANA System Replication (HSR)                                                                                                                                                                               | Provide 99.95% availability for HANA DB                                                  |
 |                                    | [Veeam](/docs/vpc?topic=vpc-about-veeam)                                                                                                                                               | Controls both the backups and restores of all VSIs or BMs. Veeam Backup & Replication 12 |
 | Service Management (Observability) | [{{site.data.keyword.Bluemix_notm}} Monitoring](/docs/monitoring?topic=monitoring-about-monitor)                                                                                                                | Apps and operational monitoring                                                          |
-|                                    | [IBM Log Analysis](/docs/log-analysis?topic=log-analysis-getting-started)                                                                                                              | Apps and operational logs                                                                |
+|                                    | [IBM Cloud Logs](/docs/cloud-logs)                                                                                                              | Apps and operational logs                                                                |
 {: caption="Components" caption-side="bottom"}
 
 The architecture framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. The following sections contain the considerations and architecture decisions for the aspects and domains that are in play in this solution pattern.
